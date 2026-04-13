@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaving Your Dog With a Sitter? Here's What They Actually Need to Know - The Scattered Nest</title>
+    <meta name="description" content="Whether it's a pet sitter, family member, or your own kids, here's what to write down before you leave your dog with someone else.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple: #C99BE5;
+            --purple-dark: #A06CC8;
+            --purple-deeper: #7B4FA0;
+            --teal: #8CD6D8;
+            --teal-dark: #5BBFC2;
+            --bg-cream: #FAF8FC;
+            --bg-section: #F3EEF8;
+            --text-dark: #3D2C4E;
+            --text-mid: #6B5A7D;
+            --text-light: #9A8AAC;
+            --white: #FFFFFF;
+            --shadow-soft: 0 2px 20px rgba(160, 108, 200, 0.1);
+            --shadow-card: 0 4px 24px rgba(160, 108, 200, 0.12);
+            --radius: 16px;
+            --max-width: 760px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
+        a { color: var(--purple-dark); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--purple-deeper); }
+
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(250, 248, 252, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(201, 155, 229, 0.15);
+        }
+        .nav.scrolled { box-shadow: var(--shadow-soft); }
+        .nav-inner {
+            max-width: 1100px; margin: 0 auto; padding: 12px 24px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .nav-logo { height: 44px; width: auto; }
+        .nav-links { display: flex; gap: 28px; list-style: none; }
+        .nav-links a {
+            font-size: 0.92em; font-weight: 500; color: var(--text-mid);
+            letter-spacing: 0.02em; position: relative;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0;
+            width: 0; height: 2px; background: var(--teal); transition: width 0.3s;
+        }
+        .nav-links a:hover { color: var(--purple-dark); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--purple-dark); margin: 5px 0; transition: 0.3s; }
+
+        .article-header {
+            padding: 140px 24px 48px; text-align: center;
+            background: linear-gradient(180deg, var(--bg-cream) 0%, var(--bg-section) 100%);
+        }
+        .article-tag {
+            display: inline-block; background: var(--bg-section); color: var(--purple-dark);
+            font-size: 0.78em; font-weight: 600; padding: 6px 16px; border-radius: 20px;
+            margin-bottom: 16px; letter-spacing: 0.03em; text-transform: uppercase;
+        }
+        .article-header h1 {
+            font-size: 2.4em; color: var(--purple-dark); margin-bottom: 12px;
+            max-width: var(--max-width); margin-left: auto; margin-right: auto;
+        }
+        .article-meta { color: var(--text-light); font-size: 0.9em; }
+        .article-body {
+            max-width: var(--max-width); margin: 0 auto; padding: 48px 24px 80px;
+        }
+        .article-body p {
+            color: var(--text-mid); font-size: 1.02em; margin-bottom: 24px;
+            text-align: justify; hyphens: none;
+        }
+        .article-body .intro {
+            font-size: 1.1em; font-style: italic; color: var(--text-dark);
+            border-left: 3px solid var(--purple); padding-left: 20px;
+            margin-bottom: 32px; text-align: left;
+        }
+        .article-body h2 {
+            font-size: 1.5em; color: var(--purple-dark);
+            margin-top: 40px; margin-bottom: 16px;
+        }
+        .article-body h3 {
+            font-size: 1.2em; color: var(--purple-dark);
+            margin-top: 32px; margin-bottom: 12px;
+        }
+        .cta-box {
+            background: var(--bg-section); border-radius: var(--radius);
+            padding: 32px; text-align: center; margin: 48px 0;
+        }
+        .cta-box h3 {
+            font-size: 1.3em; color: var(--purple-dark);
+            margin-bottom: 12px; margin-top: 0;
+        }
+        .cta-box p { text-align: center !important; margin-bottom: 20px !important; }
+        .btn {
+            display: inline-block; padding: 14px 32px; border-radius: 50px;
+            font-size: 0.95em; font-weight: 600; letter-spacing: 0.02em;
+            transition: all 0.3s; cursor: pointer; border: none;
+        }
+        .btn-primary { background: var(--purple); color: var(--white); }
+        .btn-primary:hover {
+            background: var(--purple-dark); color: var(--white);
+            transform: translateY(-2px); box-shadow: 0 6px 20px rgba(160, 108, 200, 0.3);
+        }
+        .back-link {
+            display: inline-block; margin-bottom: 32px;
+            font-size: 0.9em; font-weight: 500; color: var(--teal-dark);
+        }
+        .back-link:hover { color: var(--purple-dark); }
+        .footer {
+            background: var(--text-dark); color: rgba(255,255,255,0.7);
+            padding: 32px 24px; text-align: center; font-size: 0.85em;
+        }
+        .footer a { color: var(--teal); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-links.open {
+                display: flex; flex-direction: column;
+                position: absolute; top: 68px; left: 0; right: 0;
+                background: rgba(250, 248, 252, 0.98);
+                padding: 24px; gap: 16px;
+                border-bottom: 1px solid rgba(201, 155, 229, 0.15);
+                box-shadow: var(--shadow-soft);
+            }
+            .nav-toggle { display: block; }
+            .article-header { padding: 120px 20px 36px; }
+            .article-header h1 { font-size: 1.8em; }
+            .article-body { padding: 36px 20px 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav" id="navbar">
+        <div class="nav-inner">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../#about">About</a></li>
+                <li><a href="../#shop">Shop</a></li>
+                <li><a href="./">Blog</a></li>
+                <li><a href="../#connect">Connect</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="article-header">
+        <span class="article-tag">Dog Care</span>
+        <h1>Leaving Your Dog With a Sitter? Here's What They Actually Need to Know</h1>
+        <p class="article-meta">June 8, 2026 &middot; By Rae</p>
+    </header>
+
+    <article class="article-body">
+        <a href="./" class="back-link">&larr; Back to all posts</a>
+
+        <p class="intro">My kids know my dogs. They greet them when they come home from school, they play with them, they love them. But when I need to leave Zero and Scotty with them for a day or two? That's when I realize how much of what I do for these dogs lives entirely in my head.</p>
+
+        <p>It doesn't matter how familiar someone is with your dog. If they're not the one doing the daily routine, there are a hundred little details they don't know. And it's not their fault. They just haven't needed to know until now.</p>
+
+        <p>This isn't just about hiring a professional pet sitter, either. It's about anyone who steps in. Your kids, your parents, a friend, a neighbour. Whoever it is, they need more information than you think, and you will forget to tell them something important if you don't write it down.</p>
+
+        <h2>The Stuff You Think Is Obvious (But Isn't)</h2>
+
+        <p>Here's what I've learned: the things that feel automatic to you are completely unknown to someone else. You do them every day without thinking. But the person stepping in has no idea.</p>
+
+        <p>For example, Scotty wears a harness on walks. Always. If you put a regular collar on him and he sees something exciting (or scary, or basically anything), he will choke himself trying to get to it. He doesn't have the self-awareness to stop pulling. The harness keeps him safe. But if I didn't tell my kids that, they'd grab the first leash they see and clip it to his collar, because that's what seems normal.</p>
+
+        <p>Zero needs a martingale collar. A regular collar is not safe for him because if he gets startled, or if the crows show up (and the crows always show up), he will try to back out of it. And he's gotten good at it. He's strong, and when he's scared, he can slip a regular collar faster than you'd think. A harness works too, but then he pulls like a freight train, so the martingale is the better option for walks.</p>
+
+        <p>These are the kind of details that seem small but really matter. And there are a lot of them.</p>
+
+        <h2>Medications and Feeding</h2>
+
+        <p>This is probably the most important section, and it's the one people most often forget to write down completely. Not because they don't care, but because they've been doing it on autopilot for so long that they don't think about it as information that needs to be shared.</p>
+
+        <p>Write down exactly what medications your dog takes, how much of each one, and when they get them. Don't assume your sitter will figure it out from the bottle. Pill bottles have tiny print, and if there are multiple medications, it can get confusing fast.</p>
+
+        <p>Same with food. What brand, how much, what time. Does your dog eat dry food only or do you mix something in? Are there foods they absolutely cannot have? Zero can't have beef, dairy, or cucumbers. He's on a sensitive stomach and skin recipe. If someone didn't know that and decided to give him a piece of cheese as a treat, we'd be dealing with the consequences for days.</p>
+
+        <p>And speaking of treats, write down which ones are safe and where they're kept. It's a small thing, but it prevents a well-meaning sitter from grabbing whatever's in the pantry.</p>
+
+        <h2>Walk Routines and Safety</h2>
+
+        <p>Where you walk your dog matters more than most people realize. Especially if your dog is reactive or has specific needs.</p>
+
+        <p>I have to leave notes about where to walk Zero and Scotty. There are routes that are safer than others because there are fewer off-leash dogs, less chance of a surprise encounter. I can't just say "take them for a walk." I need to say "walk this route, avoid that street, cross here because the neighbour's dog is usually in the front yard."</p>
+
+        <p>Also: what time do they usually walk? How long? Does one dog walk separately from the other, or do they go together? What do you do if another dog approaches? These aren't things most people think to ask, but they're things that can go wrong quickly if nobody mentions them.</p>
+
+        <h2>Vet Information</h2>
+
+        <p>Hopefully your sitter will never need this. But if they do, they need it fast. Write down your regular vet's name, number, and address. Write down the closest emergency vet too, because after-hours emergencies don't care about your regular vet's schedule.</p>
+
+        <p>Also include any current health conditions. If your dog has allergies, a chronic condition, or something the vet is monitoring, the sitter should know about it. If something goes wrong and they end up at the emergency vet, being able to say "he has microphthalmia and food sensitivities, here are his current meds" is a lot more helpful than "I don't know, his owner didn't say."</p>
+
+        <h2>Behaviour and Quirks</h2>
+
+        <p>Every dog has their things. The stuff that makes them who they are. Your sitter needs to know the important ones.</p>
+
+        <p>Does your dog get anxious during storms? Do they bark at specific sounds? Are they afraid of certain objects? Do they need to be let out at a specific time or they'll have an accident?</p>
+
+        <p>Zero is almost completely blind and can only hear out of one ear. He looks behind him to the right when you talk to him. If you didn't know that, you might think he's ignoring you. He's not. He's turning his good ear toward you. That's the kind of thing a sitter needs to know so they don't get frustrated or accidentally startle him by approaching from his deaf side.</p>
+
+        <p>Scotty is impatient. If he thinks a treat is coming, he will run through every trick he knows without being asked. Sit, shake, down, spin, all of it, rapid fire, before you even open the bag. It's hilarious, but a sitter who doesn't know this might think he's being demanding or disobedient. He's not. He's just very motivated.</p>
+
+        <h2>Emergency Contacts</h2>
+
+        <p>Beyond the vet, leave your own contact information somewhere obvious. Your phone number, an alternate number, and maybe the number of someone local who knows your dogs and could help in a pinch.</p>
+
+        <p>It sounds basic, but if your sitter is panicking because something happened, they need to be able to reach you or someone who can help without scrolling through their phone trying to remember your last name.</p>
+
+        <h2>Write It Down Once, Use It Every Time</h2>
+
+        <p>The best part about writing all this down is that you only have to do it once. After that, you've got a document you can hand to anyone. Update it when things change (new medication, new walking route, new food) and it stays useful for years.</p>
+
+        <p>It doesn't matter if it's your kids, a professional sitter, or your neighbour doing you a favour. Having everything in one place means you're not scrambling at the last minute trying to remember what to tell them, and they're not texting you every hour asking questions you forgot to answer.</p>
+
+        <div class="cta-box">
+            <h3>Want a ready-made template?</h3>
+            <p>I built a printable Pet Sitter Instructions sheet that covers all of this: medications, feeding, walk routines, vet info, emergency contacts, and your dog's specific quirks. Fill it out once and it's ready whenever you need it.</p>
+            <a href="https://payhip.com/TheScatteredNest" class="btn btn-primary" target="_blank" rel="noopener">Check Out the Pet Sitter Instructions</a>
+        </div>
+
+        <p>Your sitter doesn't need to know everything you know. But they need to know enough to keep your dog safe, comfortable, and on routine. And the only way to make sure that happens is to put it on paper before you walk out the door.</p>
+    </article>
+
+    <footer class="footer">
+        <p>&copy; 2026 The Scattered Nest. All rights reserved. | <a href="../privacy/">Privacy Policy</a> | <a href="../">Home</a></p>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 20); });
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => { navLinks.classList.toggle('open'); });
+        navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('open'); }); });
+    </script>
+</body>
+</html>

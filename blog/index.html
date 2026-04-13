@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - From the Nest | The Scattered Nest</title>
+    <meta name="description" content="Tips, stories, and real-life dog care advice from a scattered dog parent. Practical help for neurodivergent dog owners.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple: #C99BE5;
+            --purple-dark: #A06CC8;
+            --purple-deeper: #7B4FA0;
+            --teal: #8CD6D8;
+            --teal-dark: #5BBFC2;
+            --bg-cream: #FAF8FC;
+            --bg-section: #F3EEF8;
+            --text-dark: #3D2C4E;
+            --text-mid: #6B5A7D;
+            --text-light: #9A8AAC;
+            --white: #FFFFFF;
+            --shadow-soft: 0 2px 20px rgba(160, 108, 200, 0.1);
+            --shadow-card: 0 4px 24px rgba(160, 108, 200, 0.12);
+            --radius: 16px;
+            --max-width: 1100px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: var(--purple-dark); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--purple-deeper); }
+
+        /* Nav */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(250, 248, 252, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(201, 155, 229, 0.15);
+        }
+        .nav.scrolled { box-shadow: var(--shadow-soft); }
+        .nav-inner {
+            max-width: var(--max-width); margin: 0 auto; padding: 12px 24px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .nav-logo { height: 44px; width: auto; }
+        .nav-links { display: flex; gap: 28px; list-style: none; }
+        .nav-links a {
+            font-size: 0.92em; font-weight: 500; color: var(--text-mid);
+            letter-spacing: 0.02em; position: relative;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0;
+            width: 0; height: 2px; background: var(--teal); transition: width 0.3s;
+        }
+        .nav-links a:hover { color: var(--purple-dark); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--purple-dark); margin: 5px 0; transition: 0.3s; }
+
+        /* Page Header */
+        .page-header {
+            padding: 140px 24px 48px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--bg-cream) 0%, var(--bg-section) 100%);
+        }
+        .page-header h1 {
+            font-size: 2.8em;
+            color: var(--purple-dark);
+            margin-bottom: 12px;
+        }
+        .page-header p {
+            color: var(--text-mid);
+            font-size: 1.1em;
+            max-width: 540px;
+            margin: 0 auto;
+        }
+        .accent-line {
+            width: 60px; height: 3px;
+            background: linear-gradient(90deg, var(--purple), var(--teal));
+            margin: 20px auto 0; border-radius: 2px;
+        }
+
+        /* Blog Grid */
+        .blog-section {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+        .blog-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(160, 108, 200, 0.18);
+        }
+        .blog-card-image {
+            width: 100%; aspect-ratio: 16/9; object-fit: cover;
+            background: linear-gradient(135deg, #D4F0F1, #EDE3F5);
+        }
+        .placeholder-img {
+            width: 100%; aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #EDE3F5, #D4F0F1);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-light); font-size: 0.9em;
+        }
+        .blog-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+        .blog-card-tag {
+            display: inline-block; background: var(--bg-section);
+            color: var(--purple-dark); font-size: 0.78em; font-weight: 600;
+            padding: 4px 12px; border-radius: 20px; margin-bottom: 12px;
+            letter-spacing: 0.03em; text-transform: uppercase; align-self: flex-start;
+        }
+        .blog-card-body h3 {
+            font-size: 1.2em; color: var(--purple-dark); margin-bottom: 8px;
+        }
+        .blog-card-body p {
+            color: var(--text-mid); font-size: 0.92em; margin-bottom: 16px; flex: 1;
+        }
+        .blog-card-date {
+            font-size: 0.82em; color: var(--text-light); margin-bottom: 8px;
+        }
+        .read-more {
+            font-size: 0.9em; font-weight: 600; color: var(--teal-dark);
+        }
+        .read-more:hover { color: var(--purple-dark); }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: rgba(255,255,255,0.7);
+            padding: 32px 24px;
+            text-align: center;
+            font-size: 0.85em;
+        }
+        .footer a { color: var(--teal); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-links.open {
+                display: flex; flex-direction: column;
+                position: absolute; top: 68px; left: 0; right: 0;
+                background: rgba(250, 248, 252, 0.98);
+                padding: 24px; gap: 16px;
+                border-bottom: 1px solid rgba(201, 155, 229, 0.15);
+                box-shadow: var(--shadow-soft);
+            }
+            .nav-toggle { display: block; }
+            .page-header { padding: 120px 20px 36px; }
+            .page-header h1 { font-size: 2em; }
+            .blog-section { padding: 40px 20px 60px; }
+            .blog-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav" id="navbar">
+        <div class="nav-inner">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../#about">About</a></li>
+                <li><a href="../#shop">Shop</a></li>
+                <li><a href="./">Blog</a></li>
+                <li><a href="../#connect">Connect</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>From the Nest</h1>
+        <p>Tips, stories, and real-life dog care advice from one scattered dog parent to another.</p>
+        <div class="accent-line"></div>
+    </header>
+
+    <section class="blog-section">
+        <div class="blog-grid">
+
+            <!-- Existing: Vet Tracking -->
+            <article class="blog-card">
+                <div class="placeholder-img"><span>&#128054; Dog Health</span></div>
+                <div class="blog-card-body">
+                    <span class="blog-card-tag">Dog Health</span>
+                    <h3>5 Things Your Vet Wishes You Were Tracking</h3>
+                    <p>Simple habits that can make vet visits smoother and catch health changes early.</p>
+                    <a href="5-things-your-vet-wishes-you-were-tracking.html" class="read-more">Read more &rarr;</a>
+                </div>
+            </article>
+
+            <!-- Existing: Dog Care Binder -->
+            <article class="blog-card">
+                <div class="placeholder-img"><span>&#128054; Organization</span></div>
+                <div class="blog-card-body">
+                    <span class="blog-card-tag">Organization</span>
+                    <h3>How to Build a Dog Care Binder That Actually Gets Used</h3>
+                    <p>A step-by-step guide to organizing your pup's health info in one cozy spot.</p>
+                    <a href="how-to-build-a-dog-care-binder.html" class="read-more">Read more &rarr;</a>
+                </div>
+            </article>
+
+            <!-- Existing: Puppy Checklist -->
+            <article class="blog-card">
+                <div class="placeholder-img"><span>&#128054; New Puppy</span></div>
+                <div class="blog-card-body">
+                    <span class="blog-card-tag">New Puppy</span>
+                    <h3>The First-Year Puppy Checklist Every New Owner Needs</h3>
+                    <p>Vaccinations, milestones, and all the things you'll forget if you don't write them down.</p>
+                    <a href="first-year-puppy-checklist.html" class="read-more">Read more &rarr;</a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 The Scattered Nest. All rights reserved. | <a href="../privacy/">Privacy Policy</a> | <a href="../">Home</a></p>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 20); });
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => { navLinks.classList.toggle('open'); });
+        navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('open'); }); });
+    </script>
+</body>
+</html>

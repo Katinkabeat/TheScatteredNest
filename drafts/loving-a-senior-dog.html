@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loving a Senior Dog: What Changes and What to Watch For - The Scattered Nest</title>
+    <meta name="description" content="My dogs aren't seniors yet, but I've already learned the hard way that being prepared matters. Here's what to start tracking before the grey muzzle years.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple: #C99BE5; --purple-dark: #A06CC8; --purple-deeper: #7B4FA0;
+            --teal: #8CD6D8; --teal-dark: #5BBFC2;
+            --bg-cream: #FAF8FC; --bg-section: #F3EEF8;
+            --text-dark: #3D2C4E; --text-mid: #6B5A7D; --text-light: #9A8AAC;
+            --white: #FFFFFF;
+            --shadow-soft: 0 2px 20px rgba(160, 108, 200, 0.1);
+            --shadow-card: 0 4px 24px rgba(160, 108, 200, 0.12);
+            --radius: 16px; --max-width: 760px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-cream); color: var(--text-dark); line-height: 1.8; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
+        a { color: var(--purple-dark); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--purple-deeper); }
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250, 248, 252, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(201, 155, 229, 0.15); }
+        .nav.scrolled { box-shadow: var(--shadow-soft); }
+        .nav-inner { max-width: 1100px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: center; }
+        .nav-links { display: flex; gap: 28px; list-style: none; }
+        .nav-links a { font-size: 0.92em; font-weight: 500; color: var(--text-mid); letter-spacing: 0.02em; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--teal); transition: width 0.3s; }
+        .nav-links a:hover { color: var(--purple-dark); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--purple-dark); margin: 5px 0; transition: 0.3s; }
+        .article-header { padding: 140px 24px 48px; text-align: center; background: linear-gradient(180deg, var(--bg-cream) 0%, var(--bg-section) 100%); }
+        .article-tag { display: inline-block; background: var(--bg-section); color: var(--purple-dark); font-size: 0.78em; font-weight: 600; padding: 6px 16px; border-radius: 20px; margin-bottom: 16px; letter-spacing: 0.03em; text-transform: uppercase; }
+        .article-header h1 { font-size: 2.4em; color: var(--purple-dark); margin-bottom: 12px; max-width: var(--max-width); margin-left: auto; margin-right: auto; }
+        .article-meta { color: var(--text-light); font-size: 0.9em; }
+        .article-body { max-width: var(--max-width); margin: 0 auto; padding: 48px 24px 80px; }
+        .article-body p { color: var(--text-mid); font-size: 1.02em; margin-bottom: 24px; text-align: justify; hyphens: none; }
+        .article-body .intro { font-size: 1.1em; font-style: italic; color: var(--text-dark); border-left: 3px solid var(--purple); padding-left: 20px; margin-bottom: 32px; text-align: left; }
+        .article-body h2 { font-size: 1.5em; color: var(--purple-dark); margin-top: 40px; margin-bottom: 16px; }
+        .article-body h3 { font-size: 1.2em; color: var(--purple-dark); margin-top: 32px; margin-bottom: 12px; }
+        .cta-box { background: var(--bg-section); border-radius: var(--radius); padding: 32px; text-align: center; margin: 48px 0; }
+        .cta-box h3 { font-size: 1.3em; color: var(--purple-dark); margin-bottom: 12px; margin-top: 0; }
+        .cta-box p { text-align: center !important; margin-bottom: 20px !important; }
+        .btn { display: inline-block; padding: 14px 32px; border-radius: 50px; font-size: 0.95em; font-weight: 600; letter-spacing: 0.02em; transition: all 0.3s; cursor: pointer; border: none; }
+        .btn-primary { background: var(--purple); color: var(--white); }
+        .btn-primary:hover { background: var(--purple-dark); color: var(--white); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(160, 108, 200, 0.3); }
+        .back-link { display: inline-block; margin-bottom: 32px; font-size: 0.9em; font-weight: 500; color: var(--teal-dark); }
+        .back-link:hover { color: var(--purple-dark); }
+        .footer { background: var(--text-dark); color: rgba(255,255,255,0.7); padding: 32px 24px; text-align: center; font-size: 0.85em; }
+        .footer a { color: var(--teal); }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: rgba(250, 248, 252, 0.98); padding: 24px; gap: 16px; border-bottom: 1px solid rgba(201, 155, 229, 0.15); box-shadow: var(--shadow-soft); }
+            .nav-toggle { display: block; }
+            .article-header { padding: 120px 20px 36px; }
+            .article-header h1 { font-size: 1.8em; }
+            .article-body { padding: 36px 20px 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav" id="navbar">
+        <div class="nav-inner">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../#about">About</a></li>
+                <li><a href="../#shop">Shop</a></li>
+                <li><a href="./">Blog</a></li>
+                <li><a href="../#connect">Connect</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="article-header">
+        <span class="article-tag">Senior Dogs</span>
+        <h1>Loving a Senior Dog: What Changes and What to Watch For</h1>
+        <p class="article-meta">August 17, 2026 &middot; By Rae</p>
+    </header>
+
+    <article class="article-body">
+        <a href="./" class="back-link">&larr; Back to all posts</a>
+
+        <p class="intro">Zero is four. Scotty is two. They're not seniors yet, not even close. But I've already learned, the hard way, that being unprepared makes everything harder. I don't want to make that same mistake when they get older.</p>
+
+        <p>When I first got Zero, I had no idea what I was doing. I didn't track his food, his symptoms, his vet visits. I spent six months dealing with stomach issues before I started writing things down. I let an eye problem go on longer than it should have because I wasn't paying close enough attention to the patterns. I've made plenty of mistakes as a dog owner, and most of them came down to the same thing: not being prepared.</p>
+
+        <p>So this time, I'm getting ahead of it. I've been researching what changes as dogs age, what to watch for, and what I should be tracking now so that when the grey muzzle years come, I'm ready. I've also borrowed some wisdom from family members who've had senior dogs and learned things the hard way too.</p>
+
+        <h2>When Is a Dog Considered Senior?</h2>
+
+        <p>It depends on the breed and size. Smaller dogs like Scotty tend to live longer and don't hit their senior years until around 10 or 11. Larger dogs like Zero are considered seniors a bit earlier, usually around 7 or 8. Giant breeds can be considered senior as young as 5 or 6.</p>
+
+        <p>But the age number matters less than the changes you observe. Some dogs slow down earlier, some stay active longer. The key is knowing your dog's normal so you can notice when things start to shift.</p>
+
+        <h2>What Changes With Age</h2>
+
+        <p>Senior dogs go through a lot of the same things older humans do. Not all at once, and not in the same order, but gradually over time. Here are the most common things to watch for.</p>
+
+        <h3>Mobility and Energy</h3>
+
+        <p>This is usually the first thing people notice. Your dog might be slower to get up from lying down. They might not want to go on long walks anymore, or they might seem stiff after rest. Jumping on the couch or going up stairs might become harder.</p>
+
+        <p>With Zero, I already think about this. He's a border collie, which is an active breed, but his vision and hearing limitations mean he's always been a little more cautious with his movement. As he ages, I want to be tracking his mobility closely so I can catch early signs of joint issues or pain before they become serious.</p>
+
+        <h3>Eating and Drinking</h3>
+
+        <p>Changes in appetite are common in senior dogs. They might eat less, be pickier about food, or need a diet that's easier on their digestive system. Increased thirst can be a sign of kidney issues or diabetes, so it's worth tracking how much they drink.</p>
+
+        <p>I already know Zero is a fussy eater. But there's a difference between "Zero being Zero" and a genuine change in appetite that signals something medical. The only way I'll know the difference when he's older is if I'm tracking his eating habits now, so I have a baseline to compare against.</p>
+
+        <h3>Bathroom Habits</h3>
+
+        <p>Senior dogs might need to go out more often. Accidents in the house can start happening again, not because they forgot their training, but because their bladder or bowel control isn't what it used to be. This can be frustrating, but it's important to respond with patience, not punishment.</p>
+
+        <p>Changes in stool quality or frequency can also signal digestive issues, and changes in urination (more frequent, straining, darker colour) can be early signs of things like urinary tract infections or kidney problems.</p>
+
+        <h3>Vision and Hearing</h3>
+
+        <p>This one hits different for me because Zero already has limited vision and hearing. Many dogs develop cataracts, cloudiness in their eyes, or gradual hearing loss as they age. For most dogs this is a new challenge. For Zero, it's already his reality, so I'm watching closely for any further decline.</p>
+
+        <p>If your dog starts bumping into things, seems startled more easily, or stops responding to commands they used to know, it might be their vision or hearing changing. A vet check can confirm what's going on.</p>
+
+        <h3>Behaviour and Cognitive Changes</h3>
+
+        <p>Senior dogs can experience something similar to dementia in humans. It's called Cognitive Dysfunction Syndrome, and it can show up as confusion, pacing at night, staring at walls, forgetting commands they've known for years, or seeming lost in familiar places.</p>
+
+        <p>This is one of the things that worries me most about Zero's future. Because he already navigates the world differently, I need to know his current behaviour baseline really well so I can spot cognitive changes when they're subtle, not just when they're obvious.</p>
+
+        <h2>Why Tracking Matters Even More With Senior Dogs</h2>
+
+        <p>When your dog is young and healthy, changes tend to be dramatic and easy to spot. But with senior dogs, the changes creep in slowly. A little more stiffness. A little less interest in food. Sleeping a little longer. Drinking a little more. Each one on its own seems like nothing, but together they can paint a picture that your vet needs to see.</p>
+
+        <p>I learned this lesson with Zero's stomach issues and his eye. Tracking made the patterns visible. Without it, I was just guessing and hoping. I don't want to be in that position when my dogs are older and the stakes are higher.</p>
+
+        <p>From talking to family members who've had senior dogs, the number one thing they all say is "I wish I'd caught it sooner." Not because they weren't paying attention, but because the changes were so gradual that by the time they noticed, things had progressed further than they needed to.</p>
+
+        <h2>What to Start Tracking Now</h2>
+
+        <p>You don't have to wait until your dog is a senior to start tracking. In fact, starting now gives you a baseline that makes future changes easier to spot.</p>
+
+        <p><strong>Weight.</strong> Weigh your dog regularly. Even small changes can be significant, especially in smaller dogs like Scotty. A pound or two on a 10-pound dog is a big deal.</p>
+
+        <p><strong>Mobility.</strong> How easily do they get up? Do they hesitate before jumping? Are they slower on walks? Note what's normal now so you'll recognize when it changes.</p>
+
+        <p><strong>Eating and drinking.</strong> How much are they eating? Are they enthusiastic or picky? How much water are they going through? Again, knowing the baseline is everything.</p>
+
+        <p><strong>Behaviour.</strong> Energy levels, sleep patterns, how they interact with you and other pets. Is your dog more withdrawn than usual? More clingy? These can be early signals.</p>
+
+        <p><strong>Vet visits.</strong> Keep a log of what was discussed, any test results, and any concerns your vet mentioned. When your dog is seeing the vet more often (which they will as they age), having a history in one place is incredibly valuable.</p>
+
+        <h2>Making Their Later Years Good</h2>
+
+        <p>Senior dog care isn't just about catching problems early. It's about making sure your dog is comfortable, happy, and living their best life for as long as possible.</p>
+
+        <p>That might mean shorter walks but more of them. Softer beds. Ramps instead of stairs. Warmer coats in the winter. Adjusting their food as their needs change. More frequent vet check-ups. And a whole lot of patience and love as they slow down.</p>
+
+        <p>Zero and Scotty are my first dogs. I didn't know what I was doing when I started, and I've made mistakes along the way. But I've learned from every single one. And the biggest thing I've learned is that being prepared, writing things down, and paying attention to the small stuff makes a real difference. I plan to carry that into their senior years and give them the best I possibly can for the rest of their lives.</p>
+
+        <div class="cta-box">
+            <h3>Want to be ready for the senior years?</h3>
+            <p>I built a Senior Dog Care Tracker that covers mobility, appetite, behaviour changes, vet visits, and all the things worth watching as your dog ages. Start tracking now so you have a baseline when you need it most.</p>
+            <a href="https://payhip.com/TheScatteredNest" class="btn btn-primary" target="_blank" rel="noopener">Check Out the Senior Dog Tracker</a>
+        </div>
+
+        <p>Whether your dog is already in their golden years or you're planning ahead like me, the goal is the same: give them the best life you can, for every single day you have together. They've given us their whole hearts. The least we can do is pay attention.</p>
+    </article>
+
+    <footer class="footer">
+        <p>&copy; 2026 The Scattered Nest. All rights reserved. | <a href="../privacy/">Privacy Policy</a> | <a href="../">Home</a></p>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 20); });
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => { navLinks.classList.toggle('open'); });
+        navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('open'); }); });
+    </script>
+</body>
+</html>

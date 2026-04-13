@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Tracking Symptoms Saved My Dog a Lot of Discomfort - The Scattered Nest</title>
+    <meta name="description" content="How writing down what my dog was eating, how he was feeling, and what seemed off helped me figure out food sensitivities and a serious eye condition before they got worse.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple: #C99BE5;
+            --purple-dark: #A06CC8;
+            --purple-deeper: #7B4FA0;
+            --teal: #8CD6D8;
+            --teal-dark: #5BBFC2;
+            --bg-cream: #FAF8FC;
+            --bg-section: #F3EEF8;
+            --text-dark: #3D2C4E;
+            --text-mid: #6B5A7D;
+            --text-light: #9A8AAC;
+            --white: #FFFFFF;
+            --shadow-soft: 0 2px 20px rgba(160, 108, 200, 0.1);
+            --shadow-card: 0 4px 24px rgba(160, 108, 200, 0.12);
+            --radius: 16px;
+            --max-width: 760px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
+        a { color: var(--purple-dark); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--purple-deeper); }
+
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(250, 248, 252, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(201, 155, 229, 0.15);
+        }
+        .nav.scrolled { box-shadow: var(--shadow-soft); }
+        .nav-inner {
+            max-width: 1100px; margin: 0 auto; padding: 12px 24px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .nav-logo { height: 44px; width: auto; }
+        .nav-links { display: flex; gap: 28px; list-style: none; }
+        .nav-links a {
+            font-size: 0.92em; font-weight: 500; color: var(--text-mid);
+            letter-spacing: 0.02em; position: relative;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0;
+            width: 0; height: 2px; background: var(--teal); transition: width 0.3s;
+        }
+        .nav-links a:hover { color: var(--purple-dark); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--purple-dark); margin: 5px 0; transition: 0.3s; }
+
+        .article-header {
+            padding: 140px 24px 48px; text-align: center;
+            background: linear-gradient(180deg, var(--bg-cream) 0%, var(--bg-section) 100%);
+        }
+        .article-tag {
+            display: inline-block; background: var(--bg-section); color: var(--purple-dark);
+            font-size: 0.78em; font-weight: 600; padding: 6px 16px; border-radius: 20px;
+            margin-bottom: 16px; letter-spacing: 0.03em; text-transform: uppercase;
+        }
+        .article-header h1 {
+            font-size: 2.4em; color: var(--purple-dark); margin-bottom: 12px;
+            max-width: var(--max-width); margin-left: auto; margin-right: auto;
+        }
+        .article-meta { color: var(--text-light); font-size: 0.9em; }
+        .article-body {
+            max-width: var(--max-width); margin: 0 auto; padding: 48px 24px 80px;
+        }
+        .article-body p {
+            color: var(--text-mid); font-size: 1.02em; margin-bottom: 24px;
+            text-align: justify; hyphens: none;
+        }
+        .article-body .intro {
+            font-size: 1.1em; font-style: italic; color: var(--text-dark);
+            border-left: 3px solid var(--purple); padding-left: 20px;
+            margin-bottom: 32px; text-align: left;
+        }
+        .article-body h2 {
+            font-size: 1.5em; color: var(--purple-dark);
+            margin-top: 40px; margin-bottom: 16px;
+        }
+        .article-body h3 {
+            font-size: 1.2em; color: var(--purple-dark);
+            margin-top: 32px; margin-bottom: 12px;
+        }
+        .cta-box {
+            background: var(--bg-section); border-radius: var(--radius);
+            padding: 32px; text-align: center; margin: 48px 0;
+        }
+        .cta-box h3 {
+            font-size: 1.3em; color: var(--purple-dark);
+            margin-bottom: 12px; margin-top: 0;
+        }
+        .cta-box p { text-align: center !important; margin-bottom: 20px !important; }
+        .btn {
+            display: inline-block; padding: 14px 32px; border-radius: 50px;
+            font-size: 0.95em; font-weight: 600; letter-spacing: 0.02em;
+            transition: all 0.3s; cursor: pointer; border: none;
+        }
+        .btn-primary { background: var(--purple); color: var(--white); }
+        .btn-primary:hover {
+            background: var(--purple-dark); color: var(--white);
+            transform: translateY(-2px); box-shadow: 0 6px 20px rgba(160, 108, 200, 0.3);
+        }
+        .back-link {
+            display: inline-block; margin-bottom: 32px;
+            font-size: 0.9em; font-weight: 500; color: var(--teal-dark);
+        }
+        .back-link:hover { color: var(--purple-dark); }
+        .footer {
+            background: var(--text-dark); color: rgba(255,255,255,0.7);
+            padding: 32px 24px; text-align: center; font-size: 0.85em;
+        }
+        .footer a { color: var(--teal); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-links.open {
+                display: flex; flex-direction: column;
+                position: absolute; top: 68px; left: 0; right: 0;
+                background: rgba(250, 248, 252, 0.98);
+                padding: 24px; gap: 16px;
+                border-bottom: 1px solid rgba(201, 155, 229, 0.15);
+                box-shadow: var(--shadow-soft);
+            }
+            .nav-toggle { display: block; }
+            .article-header { padding: 120px 20px 36px; }
+            .article-header h1 { font-size: 1.8em; }
+            .article-body { padding: 36px 20px 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav" id="navbar">
+        <div class="nav-inner">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../#about">About</a></li>
+                <li><a href="../#shop">Shop</a></li>
+                <li><a href="./">Blog</a></li>
+                <li><a href="../#connect">Connect</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="article-header">
+        <span class="article-tag">Dog Health</span>
+        <h1>How Tracking Symptoms Saved My Dog a Lot of Discomfort</h1>
+        <p class="article-meta">June 22, 2026 &middot; By Rae</p>
+    </header>
+
+    <article class="article-body">
+        <a href="./" class="back-link">&larr; Back to all posts</a>
+
+        <p class="intro">For six months, Zero had loose stools. Six months. I kept thinking it would sort itself out, that maybe he just had a sensitive stomach, that puppies are weird about food sometimes. I was wrong, and I could have figured it out a lot sooner if I had been writing things down from the start.</p>
+
+        <p>Zero is a double merle border collie. He was born with a condition called microphthalmia, which means his eyes are abnormally small. He's almost completely blind and can only hear out of one ear. When I first got him, I didn't know what other health issues might come along with being a double merle. I was doing research constantly, showing up to vet appointments with pages of scribbled notes in a notebook, trying to stay ahead of whatever might come next.</p>
+
+        <p>But the stomach issues? I wasn't tracking those. I was just living with them, hoping they'd go away. They didn't.</p>
+
+        <h2>The Food Mystery</h2>
+
+        <p>Zero was a picky eater from day one, and it kept getting worse. He'd turn his nose up at food that he'd eaten fine the week before. I tried mixing in greek yogurt, cheese, bits of steak. Anything to get him to eat. And sometimes it worked, but the loose stools kept happening.</p>
+
+        <p>After about six months of this, I finally started writing things down. Every meal, every treat, every time something came out wrong on the other end. It felt like overkill at the time, but I was running out of ideas.</p>
+
+        <p>And that's when the pattern showed up. Every time Zero had beef, dairy, or cucumbers, his stomach went sideways. Every single time. It was right there in the notes, clear as day. I'd been accidentally making the problem worse by adding yogurt and cheese to his food to get him to eat. The things I thought were helping were the things making him sick.</p>
+
+        <p>Once we switched him to a sensitive stomach and skin recipe and cut out those triggers, the loose stools stopped. Six months of problems, solved by a couple weeks of actually paying attention and writing it down.</p>
+
+        <p>And yes, it meant no more greek yogurt in his bowl. No more cheese bits. No more steak as a topper. He wasn't thrilled about that at first. But his stomach was finally settled, and that mattered more than making dinner exciting.</p>
+
+        <p>The thing is, without tracking, the next step would have been expensive elimination diet trials at the vet. Special prescription foods, weeks of controlled feeding, the whole process. Tracking what he was already eating saved us from all of that because I could see the pattern myself.</p>
+
+        <h2>The Eye That Needed to Go</h2>
+
+        <p>The stomach issue wasn't the only thing tracking helped with. Zero's left eye had always been a concern. With microphthalmia, both of his eyes were very small, but the left one was especially tiny. His third eyelid covered it almost completely. We were pretty sure he couldn't see out of it at all.</p>
+
+        <p>I got into the habit of gently opening his eyelids to check on it. And I started noticing things. The eye was often red and irritated. Zero was rubbing the left side of his face on everything. Furniture, our legs, his dog bed, rugs. Anywhere he could press that side of his face against something, he did.</p>
+
+        <p>Then, twice, the pale blue of his iris turned brown. That was alarming enough to get us to the vet both times, and both times he was given drops. But after the second time, we had a conversation about whether this eye was doing more harm than good.</p>
+
+        <p>Because I'd been tracking when the rubbing got worse, when the redness appeared, and when the colour changes happened, we had a clear picture. This wasn't a one-time thing. It was a recurring problem, and it was causing him discomfort. The decision to have the eye removed during his neuter surgery was a lot easier because we had the history laid out.</p>
+
+        <p>Zero was coming up on a year old at that point, and neutering was already on the schedule. We weren't about to risk any additional genetic disasters being brought into the world if he ever got loose. Adding the eye removal to the same surgery made sense, and the tracking we'd done gave us and the vet the confidence that it was the right call.</p>
+
+        <h2>What I Wish I'd Known Sooner</h2>
+
+        <p>Looking back, the biggest lesson is that I waited too long to start tracking. Six months of loose stools before I picked up a pen. Months of face rubbing before I started paying close attention to the pattern. If I'd been writing things down from the beginning, I would have caught both of these a lot sooner.</p>
+
+        <p>And I get it. When you're a new dog owner, especially with a dog who has extra health challenges, you're already overwhelmed. Adding "keep a symptom diary" to the pile feels like too much. But it doesn't have to be complicated. It really doesn't.</p>
+
+        <h2>What's Worth Tracking</h2>
+
+        <p>You don't need to write a novel. Just the basics.</p>
+
+        <p><strong>What they ate.</strong> Food, treats, anything extra. If you're trying to figure out a food sensitivity, this is the most important piece.</p>
+
+        <p><strong>Stool quality.</strong> I know, nobody loves this part. But loose, firm, normal, mucus, colour changes. It matters, and your vet will ask.</p>
+
+        <p><strong>Behaviours that seem off.</strong> Rubbing their face, licking their paws more than usual, not wanting to play, hiding, pacing. Anything that's different from their normal.</p>
+
+        <p><strong>When things happen.</strong> Dates matter. "It happened a few weeks ago" is not as helpful as "it started on March 3rd and happened again on March 10th." Your vet can work with specifics. They can't work with "a while ago."</p>
+
+        <p><strong>What you tried and whether it helped.</strong> Changed food? Gave medication? Tried a new treat? Write down what you did and what happened after. This is how you build a picture over time instead of guessing.</p>
+
+        <h2>Your Vet Will Thank You</h2>
+
+        <p>I know I was probably that client. The one who came in with a notebook full of scribbled observations and way too many questions. But you know what? My vet never made me feel bad about it. Because the information was useful. It gave them something to work with beyond "he seems off."</p>
+
+        <p>If you're tracking symptoms and you bring that to your vet appointment, you're giving them a head start. Instead of starting from scratch with "so what's been going on?" they can look at your notes and start connecting dots right away. That saves time, saves money, and sometimes catches things that would have been missed otherwise.</p>
+
+        <div class="cta-box">
+            <h3>Want a simple way to track symptoms?</h3>
+            <p>I built a printable Dog Health and Symptoms Tracker after going through all of this with Zero. It covers daily observations, food logs, and symptom patterns, all in one place. It's the system I wish I'd had from the start.</p>
+            <a href="https://payhip.com/TheScatteredNest" class="btn btn-primary" target="_blank" rel="noopener">Check Out the Symptom Tracker</a>
+        </div>
+
+        <p>You don't need to be a perfect tracker. You don't need to fill in every box every day. You just need to start writing things down when something seems off, so that when you look back, you can actually see the pattern instead of trying to piece it together from memory. Because trust me, your memory will not be enough. Mine wasn't.</p>
+    </article>
+
+    <footer class="footer">
+        <p>&copy; 2026 The Scattered Nest. All rights reserved. | <a href="../privacy/">Privacy Policy</a> | <a href="../">Home</a></p>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 20); });
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => { navLinks.classList.toggle('open'); });
+        navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('open'); }); });
+    </script>
+</body>
+</html>

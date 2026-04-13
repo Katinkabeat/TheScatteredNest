@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helping Your Dog Get Past a Fear: A Step-by-Step Conditioning Guide - The Scattered Nest</title>
+    <meta name="description" content="How I helped my blind border collie overcome his fear of windchimes using slow, patient conditioning. A real-life guide to desensitization for fearful dogs.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple: #C99BE5; --purple-dark: #A06CC8; --purple-deeper: #7B4FA0;
+            --teal: #8CD6D8; --teal-dark: #5BBFC2;
+            --bg-cream: #FAF8FC; --bg-section: #F3EEF8;
+            --text-dark: #3D2C4E; --text-mid: #6B5A7D; --text-light: #9A8AAC;
+            --white: #FFFFFF;
+            --shadow-soft: 0 2px 20px rgba(160, 108, 200, 0.1);
+            --shadow-card: 0 4px 24px rgba(160, 108, 200, 0.12);
+            --radius: 16px; --max-width: 760px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-cream); color: var(--text-dark); line-height: 1.8; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
+        a { color: var(--purple-dark); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--purple-deeper); }
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250, 248, 252, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(201, 155, 229, 0.15); }
+        .nav.scrolled { box-shadow: var(--shadow-soft); }
+        .nav-inner { max-width: 1100px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: center; }
+        .nav-links { display: flex; gap: 28px; list-style: none; }
+        .nav-links a { font-size: 0.92em; font-weight: 500; color: var(--text-mid); letter-spacing: 0.02em; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--teal); transition: width 0.3s; }
+        .nav-links a:hover { color: var(--purple-dark); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--purple-dark); margin: 5px 0; transition: 0.3s; }
+        .article-header { padding: 140px 24px 48px; text-align: center; background: linear-gradient(180deg, var(--bg-cream) 0%, var(--bg-section) 100%); }
+        .article-tag { display: inline-block; background: var(--bg-section); color: var(--purple-dark); font-size: 0.78em; font-weight: 600; padding: 6px 16px; border-radius: 20px; margin-bottom: 16px; letter-spacing: 0.03em; text-transform: uppercase; }
+        .article-header h1 { font-size: 2.4em; color: var(--purple-dark); margin-bottom: 12px; max-width: var(--max-width); margin-left: auto; margin-right: auto; }
+        .article-meta { color: var(--text-light); font-size: 0.9em; }
+        .article-body { max-width: var(--max-width); margin: 0 auto; padding: 48px 24px 80px; }
+        .article-body p { color: var(--text-mid); font-size: 1.02em; margin-bottom: 24px; text-align: justify; hyphens: none; }
+        .article-body .intro { font-size: 1.1em; font-style: italic; color: var(--text-dark); border-left: 3px solid var(--purple); padding-left: 20px; margin-bottom: 32px; text-align: left; }
+        .article-body h2 { font-size: 1.5em; color: var(--purple-dark); margin-top: 40px; margin-bottom: 16px; }
+        .article-body h3 { font-size: 1.2em; color: var(--purple-dark); margin-top: 32px; margin-bottom: 12px; }
+        .cta-box { background: var(--bg-section); border-radius: var(--radius); padding: 32px; text-align: center; margin: 48px 0; }
+        .cta-box h3 { font-size: 1.3em; color: var(--purple-dark); margin-bottom: 12px; margin-top: 0; }
+        .cta-box p { text-align: center !important; margin-bottom: 20px !important; }
+        .btn { display: inline-block; padding: 14px 32px; border-radius: 50px; font-size: 0.95em; font-weight: 600; letter-spacing: 0.02em; transition: all 0.3s; cursor: pointer; border: none; }
+        .btn-primary { background: var(--purple); color: var(--white); }
+        .btn-primary:hover { background: var(--purple-dark); color: var(--white); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(160, 108, 200, 0.3); }
+        .back-link { display: inline-block; margin-bottom: 32px; font-size: 0.9em; font-weight: 500; color: var(--teal-dark); }
+        .back-link:hover { color: var(--purple-dark); }
+        .footer { background: var(--text-dark); color: rgba(255,255,255,0.7); padding: 32px 24px; text-align: center; font-size: 0.85em; }
+        .footer a { color: var(--teal); }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: rgba(250, 248, 252, 0.98); padding: 24px; gap: 16px; border-bottom: 1px solid rgba(201, 155, 229, 0.15); box-shadow: var(--shadow-soft); }
+            .nav-toggle { display: block; }
+            .article-header { padding: 120px 20px 36px; }
+            .article-header h1 { font-size: 1.8em; }
+            .article-body { padding: 36px 20px 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav" id="navbar">
+        <div class="nav-inner">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../#about">About</a></li>
+                <li><a href="../#shop">Shop</a></li>
+                <li><a href="./">Blog</a></li>
+                <li><a href="../#connect">Connect</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="article-header">
+        <span class="article-tag">Dog Training</span>
+        <h1>Helping Your Dog Get Past a Fear: A Step-by-Step Conditioning Guide</h1>
+        <p class="article-meta">August 3, 2026 &middot; By Rae</p>
+    </header>
+
+    <article class="article-body">
+        <a href="./" class="back-link">&larr; Back to all posts</a>
+
+        <p class="intro">Zero was terrified of the neighbour's windchimes. Not because of the windchimes themselves, but because they sounded like dog tags. And dog tags meant dogs. And dogs meant the possibility of getting pinned by another "friendly" dog who didn't understand that Zero couldn't see them coming.</p>
+
+        <p>That's how fear works in dogs. It doesn't always make sense to us. Your dog might be afraid of something that seems completely harmless, but in their mind there's a connection we can't see. Maybe a sound reminds them of something scary. Maybe a place is linked to a bad experience. Maybe they made an association that we'd never think of, but to them, it's very real.</p>
+
+        <p>The good news is that you can help your dog work through a lot of fears. It takes time, patience, and a whole lot of smelly treats. But it works. I've done it with Zero, and I want to walk you through exactly how.</p>
+
+        <h2>What Is Conditioning (In Plain English)?</h2>
+
+        <p>Conditioning, or desensitization, is basically teaching your dog that the scary thing isn't actually scary. You do this by exposing them to the trigger at a level they can handle, pairing it with something really good (treats, usually), and slowly increasing the exposure over time.</p>
+
+        <p>The key word is slowly. This is not about flooding your dog with the thing they're afraid of and hoping they get used to it. That doesn't work, and it usually makes things worse. You're building their confidence one tiny step at a time.</p>
+
+        <h2>How I Did It With the Windchimes</h2>
+
+        <p>Here's exactly what I did, step by step.</p>
+
+        <p><strong>Step 1: Find the distance where your dog is calm.</strong> I walked Zero toward the neighbour's house with the windchimes and paid attention to when he started to tense up. Then I backed up. I found the spot where he was aware of the sound but not reacting to it. That was our starting point.</p>
+
+        <p><strong>Step 2: Feed, feed, feed.</strong> At that safe distance, I fed him high-value, stinky treats. Not his regular kibble. The good stuff. The kind of treats he doesn't get any other time. I wanted him to think "when I hear that sound, amazing things happen." We stood there, he ate treats, and we turned around and went home. That was it.</p>
+
+        <p><strong>Step 3: Repeat for a few days.</strong> We did the same thing a few times a day for several days. Walk up, stop at the safe distance, treats, turn around. No pressure to go closer. Just building a positive association at the distance where he was comfortable.</p>
+
+        <p><strong>Step 4: Move a little closer.</strong> After a few days of success at that distance, we moved a little bit closer. Not a lot. Just enough that the sound was slightly louder. And we did the same thing. Treats, calm energy, turn around.</p>
+
+        <p><strong>Step 5: Keep going, slowly.</strong> Every few days, we inched a little closer. Some days he was fine and we could move up. Some days he was more tense and we stayed where we were or even backed up. That's normal. Progress isn't a straight line. The important thing is not to push past what your dog can handle.</p>
+
+        <p><strong>The breakthrough:</strong> Eventually, we got close enough that Zero put his paws up on the tree and tried to sniff the windchimes. He was checking them out. Making sure they were safe. That was the moment I knew it had worked. He went from terrified of the sound to curious enough to investigate it himself.</p>
+
+        <h2>When It Doesn't Work</h2>
+
+        <p>I want to be honest about this, because not every fear responds to conditioning the same way. Some things are harder to work on than others, and some might not be fixable at all.</p>
+
+        <p>Zero's windchimes? That was a win. The crows? That is an ongoing, possibly lifelong situation.</p>
+
+        <p>The problem with the crows is that they're unpredictable. They show up at different times, in different places, sometimes one at a time and sometimes in big noisy flocks. You can't control when a crow is going to land in a tree and start making noise. So I can't set up a controlled conditioning session the way I could with the windchimes, which were always in the same spot making the same sound.</p>
+
+        <p>When the crows start up, Zero will do everything in his power to get back inside the house. He pulls, he panics, he bolts for the door. Once in a while he'll get brave and bark at them, but mostly he just wants to be inside where it's safe.</p>
+
+        <p>There was actually a morning where Zero heard a single crow and decided he was going to be brave about it. He started running toward a tree near us. Nearly ran right into it (he can't see well, remember). Then he started barking up at the tree with everything he had. The only problem? The crow was across the street in a completely different tree. He was literally barking up the wrong tree. The neighbour asked me a few days later what he'd been barking at because they didn't see anything up there. Because there wasn't anything up there.</p>
+
+        <p>It's funny now, but it also shows the extra challenge that comes with a dog who has a vision impairment. He's working with limited information, and sometimes the connections he makes aren't quite right. That makes conditioning harder because even when we make progress, an unexpected crow in an unexpected place can set things back.</p>
+
+        <h2>Tips for Conditioning Your Own Dog</h2>
+
+        <p>If your dog has a fear you want to work on, here are the things I've learned that make the biggest difference:</p>
+
+        <p><strong>Start farther away than you think you need to.</strong> If your dog is already reacting, you're too close. Back up until they're calm and start there.</p>
+
+        <p><strong>Use the best treats you have.</strong> This is not the time for regular kibble. You want something smelly, something your dog goes crazy for, something they only get during these sessions. A dog with a working nose is not a dog who's about to react. The stinkier the treats, the more their brain stays focused on the food instead of the fear.</p>
+
+        <p><strong>Keep sessions short.</strong> A few minutes is plenty. You want to end on a good note, not push your dog until they're exhausted or overwhelmed. Walk up, do the work, turn around, go home. That's a good session.</p>
+
+        <p><strong>Don't rush it.</strong> Seriously. This takes days, sometimes weeks, sometimes longer. If you try to move too fast, you'll push your dog over their threshold and undo your progress. It's better to go too slow than too fast.</p>
+
+        <p><strong>Write it down.</strong> Track what distance you started at, how your dog responded, what treats you used, and whether you moved closer or stayed put. After a couple of weeks, you'll be able to look back and see the progress, even if it doesn't feel like much in the moment.</p>
+
+        <p><strong>Some days will be setbacks.</strong> That's okay. Maybe there was an extra trigger that day, or your dog was already stressed from something else, or the weather was weird. Don't take it personally. Just go back to the last distance that worked and rebuild from there.</p>
+
+        <h2>It's Not About Perfection</h2>
+
+        <p>Zero is never going to be a dog who hears windchimes and feels nothing. He's never going to love crows. He's always going to navigate the world a little differently because of his vision and hearing. But he's braver than he used to be in a lot of situations, and that's because of the slow, patient work we put in together.</p>
+
+        <p>Your dog doesn't need to be fearless. They just need to feel safe enough to get through the day without panicking. And if you can help them get there, even with one specific fear, that's a huge deal.</p>
+
+        <div class="cta-box">
+            <h3>Want to track your conditioning progress?</h3>
+            <p>I'm building a conditioning and desensitization tracker to help you log your sessions, track distances, note triggers, and see your dog's progress over time. It's designed for the kind of slow, steady work that actually makes a difference.</p>
+            <a href="https://payhip.com/TheScatteredNest" class="btn btn-primary" target="_blank" rel="noopener">Visit the Shop</a>
+        </div>
+
+        <p>If your dog is afraid of something and you've been wondering whether conditioning is worth trying, it is. It won't fix everything. Some fears are harder than others. But the process of showing your dog, over and over, that the scary thing comes with good things? That builds trust. And trust is the foundation of everything.</p>
+    </article>
+
+    <footer class="footer">
+        <p>&copy; 2026 The Scattered Nest. All rights reserved. | <a href="../privacy/">Privacy Policy</a> | <a href="../">Home</a></p>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 20); });
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => { navLinks.classList.toggle('open'); });
+        navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('open'); }); });
+    </script>
+</body>
+</html>

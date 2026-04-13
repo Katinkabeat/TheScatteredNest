@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potty Training Isn't Linear - The Scattered Nest</title>
+    <meta name="description" content="Potty training setbacks are normal. Here's how to track your puppy's progress without losing your mind, from a dog parent who has been through it.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple: #C99BE5;
+            --purple-dark: #A06CC8;
+            --purple-deeper: #7B4FA0;
+            --teal: #8CD6D8;
+            --teal-dark: #5BBFC2;
+            --bg-cream: #FAF8FC;
+            --bg-section: #F3EEF8;
+            --text-dark: #3D2C4E;
+            --text-mid: #6B5A7D;
+            --text-light: #9A8AAC;
+            --white: #FFFFFF;
+            --shadow-soft: 0 2px 20px rgba(160, 108, 200, 0.1);
+            --shadow-card: 0 4px 24px rgba(160, 108, 200, 0.12);
+            --radius: 16px;
+            --max-width: 760px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
+        a { color: var(--purple-dark); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--purple-deeper); }
+
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(250, 248, 252, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(201, 155, 229, 0.15);
+        }
+        .nav.scrolled { box-shadow: var(--shadow-soft); }
+        .nav-inner {
+            max-width: 1100px; margin: 0 auto; padding: 12px 24px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .nav-logo { height: 44px; width: auto; }
+        .nav-links { display: flex; gap: 28px; list-style: none; }
+        .nav-links a {
+            font-size: 0.92em; font-weight: 500; color: var(--text-mid);
+            letter-spacing: 0.02em; position: relative;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0;
+            width: 0; height: 2px; background: var(--teal); transition: width 0.3s;
+        }
+        .nav-links a:hover { color: var(--purple-dark); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--purple-dark); margin: 5px 0; transition: 0.3s; }
+
+        .article-header {
+            padding: 140px 24px 48px; text-align: center;
+            background: linear-gradient(180deg, var(--bg-cream) 0%, var(--bg-section) 100%);
+        }
+        .article-tag {
+            display: inline-block; background: var(--bg-section); color: var(--purple-dark);
+            font-size: 0.78em; font-weight: 600; padding: 6px 16px; border-radius: 20px;
+            margin-bottom: 16px; letter-spacing: 0.03em; text-transform: uppercase;
+        }
+        .article-header h1 {
+            font-size: 2.4em; color: var(--purple-dark); margin-bottom: 12px;
+            max-width: var(--max-width); margin-left: auto; margin-right: auto;
+        }
+        .article-meta { color: var(--text-light); font-size: 0.9em; }
+        .article-body {
+            max-width: var(--max-width); margin: 0 auto; padding: 48px 24px 80px;
+        }
+        .article-body p {
+            color: var(--text-mid); font-size: 1.02em; margin-bottom: 24px;
+            text-align: justify; hyphens: none;
+        }
+        .article-body .intro {
+            font-size: 1.1em; font-style: italic; color: var(--text-dark);
+            border-left: 3px solid var(--purple); padding-left: 20px;
+            margin-bottom: 32px; text-align: left;
+        }
+        .article-body h2 {
+            font-size: 1.5em; color: var(--purple-dark);
+            margin-top: 40px; margin-bottom: 16px;
+        }
+        .article-body h3 {
+            font-size: 1.2em; color: var(--purple-dark);
+            margin-top: 32px; margin-bottom: 12px;
+        }
+        .cta-box {
+            background: var(--bg-section); border-radius: var(--radius);
+            padding: 32px; text-align: center; margin: 48px 0;
+        }
+        .cta-box h3 {
+            font-size: 1.3em; color: var(--purple-dark);
+            margin-bottom: 12px; margin-top: 0;
+        }
+        .cta-box p { text-align: center !important; margin-bottom: 20px !important; }
+        .btn {
+            display: inline-block; padding: 14px 32px; border-radius: 50px;
+            font-size: 0.95em; font-weight: 600; letter-spacing: 0.02em;
+            transition: all 0.3s; cursor: pointer; border: none;
+        }
+        .btn-primary { background: var(--purple); color: var(--white); }
+        .btn-primary:hover {
+            background: var(--purple-dark); color: var(--white);
+            transform: translateY(-2px); box-shadow: 0 6px 20px rgba(160, 108, 200, 0.3);
+        }
+        .back-link {
+            display: inline-block; margin-bottom: 32px;
+            font-size: 0.9em; font-weight: 500; color: var(--teal-dark);
+        }
+        .back-link:hover { color: var(--purple-dark); }
+        .footer {
+            background: var(--text-dark); color: rgba(255,255,255,0.7);
+            padding: 32px 24px; text-align: center; font-size: 0.85em;
+        }
+        .footer a { color: var(--teal); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-links.open {
+                display: flex; flex-direction: column;
+                position: absolute; top: 68px; left: 0; right: 0;
+                background: rgba(250, 248, 252, 0.98);
+                padding: 24px; gap: 16px;
+                border-bottom: 1px solid rgba(201, 155, 229, 0.15);
+                box-shadow: var(--shadow-soft);
+            }
+            .nav-toggle { display: block; }
+            .article-header { padding: 120px 20px 36px; }
+            .article-header h1 { font-size: 1.8em; }
+            .article-body { padding: 36px 20px 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav" id="navbar">
+        <div class="nav-inner">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../#about">About</a></li>
+                <li><a href="../#shop">Shop</a></li>
+                <li><a href="./">Blog</a></li>
+                <li><a href="../#connect">Connect</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="article-header">
+        <span class="article-tag">Puppy Training</span>
+        <h1>Potty Training Isn't Linear</h1>
+        <p class="article-meta">April 27, 2026 &middot; By Rae</p>
+    </header>
+
+    <article class="article-body">
+        <a href="./" class="back-link">&larr; Back to all posts</a>
+
+        <p class="intro">Zero went five whole days without an accident in the house. Five days. I thought we had finally cracked it. I was so proud of both of us. And then he peed on the couch.</p>
+
+        <p>I'm not going to lie, I almost cried. Not because of the couch (it survived), but because I thought we had been making so much progress and it felt like we were suddenly back at square one.</p>
+
+        <p>Here's what I wish someone had told me back then: setbacks don't erase progress. They're just part of the process. Potty training is not a straight line from "accidents everywhere" to "fully housetrained." It's more like a zigzag that eventually trends in the right direction, if you're paying attention.</p>
+
+        <h2>Why Setbacks Happen</h2>
+
+        <p>There are so many reasons a puppy (or a newly adopted dog) might have a setback. Some of the most common ones have nothing to do with whether you're doing a good job.</p>
+
+        <p>Changes in routine can throw them off. Maybe you had visitors over and your schedule got disrupted. Maybe the weather changed and they don't want to go outside because it's raining. Growth spurts can cause regression too. And sometimes, honestly, they just get excited or distracted and forget what they're supposed to do.</p>
+
+        <p>With Zero, I had the added challenge of him not being able to see or hear well. I couldn't just call him to the door or point him outside the way most people do. We had to figure out our own system. I'd walk to him, touch his shoulder, and guide him out. It took longer, but he got there. He always gets there. That dog is smarter than I give him credit for.</p>
+
+        <h2>What Actually Helped Me</h2>
+
+        <p>The single most useful thing I did was start writing down when accidents happened. Not as some kind of failure log, but because I started to see patterns.</p>
+
+        <p>I noticed that most of Zero's accidents happened in the late afternoon, usually after he'd been napping. Once I saw that pattern, I started taking him out right after every nap. Just that one change made a huge difference. But I never would have noticed it if I'd only been tracking the good days.</p>
+
+        <p>I also tracked what time he ate, when he drank a bunch of water, and when he last went outside. It sounds like a lot, but it was really just quick notes. And after a couple of weeks, I had a pretty solid picture of his routine.</p>
+
+        <h2>Stop Comparing to Other People's Dogs</h2>
+
+        <p>This one took me a while to learn. I'd be in puppy class and someone would say their dog was fully housetrained at 10 weeks and I'd feel like I was doing something wrong. My dog was months into training and still having occasional accidents.</p>
+
+        <p>But every dog is different. Every situation is different. Some dogs pick it up fast. Some dogs need more time, especially if they're dealing with health challenges, anxiety from a shelter environment, or a big transition like moving to a new home.</p>
+
+        <p>When Scotty came to us from the rescue in Texas, he'd never lived in a house before. He'd been in a shelter his whole life. The concept of "outside is for peeing, inside is not" was brand new to him. He wasn't being bad. He genuinely didn't know. And once we gave him the time and consistency he needed, he figured it out.</p>
+
+        <h2>What to Track (Without Overcomplicating It)</h2>
+
+        <p>If you're in the middle of potty training and it feels like chaos, here are the things worth writing down:</p>
+
+        <p><strong>When they go outside successfully.</strong> This is the good stuff. You want to see this list grow over time, and it will.</p>
+
+        <p><strong>When accidents happen.</strong> Note the time and where it happened. After a week or two, check for patterns. Same time of day? Same spot? After a specific activity like eating or playing?</p>
+
+        <p><strong>Meal and water times.</strong> There's usually a pretty predictable window between when a puppy eats or drinks and when they need to go. Once you figure out your dog's window, you can time your outings better.</p>
+
+        <p><strong>Your reaction.</strong> This one is for you, not the dog. If you find yourself getting frustrated (and you will, because you're human), it helps to notice it. Not to feel guilty, but because frustrated energy can make your dog anxious, which can actually make the problem worse. If you're having a rough day with it, that's okay. Write it down and move on.</p>
+
+        <h2>The Progress You Can't See Yet</h2>
+
+        <p>Here's the thing about tracking: it shows you progress that doesn't feel like progress in the moment.</p>
+
+        <p>Week one, maybe you had 4 accidents. Week three, you had 2. Week five, you had 1. It doesn't feel like a win on week five because you still had an accident. But when you look at the numbers, you can actually see that things are moving in the right direction.</p>
+
+        <p>That matters. Especially on the hard days, when you're cleaning up the floor for the second time and wondering if your dog will ever get this. They will. It just doesn't always look like a straight line.</p>
+
+        <div class="cta-box">
+            <h3>Want a simple way to track it all?</h3>
+            <p>I built a Potty Training Tracker that covers accidents, successes, meals, and patterns. It's the system I wish I'd had when Zero was a puppy, without the overthinking I usually do about these things.</p>
+            <a href="https://payhip.com/TheScatteredNest" class="btn btn-primary" target="_blank" rel="noopener">Check Out the Potty Training Tracker</a>
+        </div>
+
+        <p>And if you're reading this on a bad day, with paper towels in one hand and your phone in the other, take a breath. You're not failing. Potty training is just messy. Literally. But it gets better.</p>
+    </article>
+
+    <footer class="footer">
+        <p>&copy; 2026 The Scattered Nest. All rights reserved. | <a href="../privacy/">Privacy Policy</a> | <a href="../">Home</a></p>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 20); });
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => { navLinks.classList.toggle('open'); });
+        navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('open'); }); });
+    </script>
+</body>
+</html>

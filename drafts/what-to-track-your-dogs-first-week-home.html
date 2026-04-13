@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What to Track Your Dog's First Week Home - The Scattered Nest</title>
+    <meta name="description" content="The first week with a new dog is a blur. Here's what to write down so you don't forget the stuff that actually matters for your pup's health and routine.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple: #C99BE5;
+            --purple-dark: #A06CC8;
+            --purple-deeper: #7B4FA0;
+            --teal: #8CD6D8;
+            --teal-dark: #5BBFC2;
+            --bg-cream: #FAF8FC;
+            --bg-section: #F3EEF8;
+            --text-dark: #3D2C4E;
+            --text-mid: #6B5A7D;
+            --text-light: #9A8AAC;
+            --white: #FFFFFF;
+            --shadow-soft: 0 2px 20px rgba(160, 108, 200, 0.1);
+            --shadow-card: 0 4px 24px rgba(160, 108, 200, 0.12);
+            --radius: 16px;
+            --max-width: 760px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
+        a { color: var(--purple-dark); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--purple-deeper); }
+
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(250, 248, 252, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(201, 155, 229, 0.15);
+        }
+        .nav.scrolled { box-shadow: var(--shadow-soft); }
+        .nav-inner {
+            max-width: 1100px; margin: 0 auto; padding: 12px 24px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .nav-logo { height: 44px; width: auto; }
+        .nav-links { display: flex; gap: 28px; list-style: none; }
+        .nav-links a {
+            font-size: 0.92em; font-weight: 500; color: var(--text-mid);
+            letter-spacing: 0.02em; position: relative;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0;
+            width: 0; height: 2px; background: var(--teal); transition: width 0.3s;
+        }
+        .nav-links a:hover { color: var(--purple-dark); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--purple-dark); margin: 5px 0; transition: 0.3s; }
+
+        .article-header {
+            padding: 140px 24px 48px; text-align: center;
+            background: linear-gradient(180deg, var(--bg-cream) 0%, var(--bg-section) 100%);
+        }
+        .article-tag {
+            display: inline-block; background: var(--bg-section); color: var(--purple-dark);
+            font-size: 0.78em; font-weight: 600; padding: 6px 16px; border-radius: 20px;
+            margin-bottom: 16px; letter-spacing: 0.03em; text-transform: uppercase;
+        }
+        .article-header h1 {
+            font-size: 2.4em; color: var(--purple-dark); margin-bottom: 12px;
+            max-width: var(--max-width); margin-left: auto; margin-right: auto;
+        }
+        .article-meta { color: var(--text-light); font-size: 0.9em; }
+        .article-body {
+            max-width: var(--max-width); margin: 0 auto; padding: 48px 24px 80px;
+        }
+        .article-body p {
+            color: var(--text-mid); font-size: 1.02em; margin-bottom: 24px;
+            text-align: justify; hyphens: none;
+        }
+        .article-body .intro {
+            font-size: 1.1em; font-style: italic; color: var(--text-dark);
+            border-left: 3px solid var(--purple); padding-left: 20px;
+            margin-bottom: 32px; text-align: left;
+        }
+        .article-body h2 {
+            font-size: 1.5em; color: var(--purple-dark);
+            margin-top: 40px; margin-bottom: 16px;
+        }
+        .article-body h3 {
+            font-size: 1.2em; color: var(--purple-dark);
+            margin-top: 32px; margin-bottom: 12px;
+        }
+        .cta-box {
+            background: var(--bg-section); border-radius: var(--radius);
+            padding: 32px; text-align: center; margin: 48px 0;
+        }
+        .cta-box h3 {
+            font-size: 1.3em; color: var(--purple-dark);
+            margin-bottom: 12px; margin-top: 0;
+        }
+        .cta-box p { text-align: center !important; margin-bottom: 20px !important; }
+        .btn {
+            display: inline-block; padding: 14px 32px; border-radius: 50px;
+            font-size: 0.95em; font-weight: 600; letter-spacing: 0.02em;
+            transition: all 0.3s; cursor: pointer; border: none;
+        }
+        .btn-primary { background: var(--purple); color: var(--white); }
+        .btn-primary:hover {
+            background: var(--purple-dark); color: var(--white);
+            transform: translateY(-2px); box-shadow: 0 6px 20px rgba(160, 108, 200, 0.3);
+        }
+        .back-link {
+            display: inline-block; margin-bottom: 32px;
+            font-size: 0.9em; font-weight: 500; color: var(--teal-dark);
+        }
+        .back-link:hover { color: var(--purple-dark); }
+        .footer {
+            background: var(--text-dark); color: rgba(255,255,255,0.7);
+            padding: 32px 24px; text-align: center; font-size: 0.85em;
+        }
+        .footer a { color: var(--teal); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-links.open {
+                display: flex; flex-direction: column;
+                position: absolute; top: 68px; left: 0; right: 0;
+                background: rgba(250, 248, 252, 0.98);
+                padding: 24px; gap: 16px;
+                border-bottom: 1px solid rgba(201, 155, 229, 0.15);
+                box-shadow: var(--shadow-soft);
+            }
+            .nav-toggle { display: block; }
+            .article-header { padding: 120px 20px 36px; }
+            .article-header h1 { font-size: 1.8em; }
+            .article-body { padding: 36px 20px 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav" id="navbar">
+        <div class="nav-inner">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../#about">About</a></li>
+                <li><a href="../#shop">Shop</a></li>
+                <li><a href="./">Blog</a></li>
+                <li><a href="../#connect">Connect</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="article-header">
+        <span class="article-tag">New Puppy</span>
+        <h1>What to Track Your Dog's First Week Home</h1>
+        <p class="article-meta">April 13, 2026 &middot; By Rae</p>
+    </header>
+
+    <article class="article-body">
+        <a href="./" class="back-link">&larr; Back to all posts</a>
+
+        <p class="intro">When I brought Zero home, I didn't know the first thing about dogs. I was a cat person. Always had been. And then suddenly I was holding this wiggly little white puppy who couldn't see and could barely hear, and I thought... okay. I guess we're doing this.</p>
+
+        <p>That first week was a total blur. I was so overwhelmed trying to figure out what he needed, when he needed it, and whether I was doing any of it right. I didn't write anything down because honestly, it didn't even occur to me. I was in full survival mode.</p>
+
+        <p>Looking back, I really wish I had tracked a few things from the start. Not because I needed to be perfect about it, but because when I eventually did need that information (at vet visits, at puppy class, when things went sideways at 3 a.m.), I didn't have it.</p>
+
+        <p>So if you're in that first week right now, or you're about to be, here's what I'd suggest keeping notes on. It doesn't have to be fancy. A notebook on the counter works. The point is just to get it out of your brain and onto something you can look at later.</p>
+
+        <h2>1. What and When They're Eating</h2>
+
+        <p>This sounds basic, but it matters. Write down what food you're giving them, how much, and what times. If you're transitioning from what the breeder or shelter was feeding, note that too.</p>
+
+        <p>The reason this is important is that puppies (and newly adopted dogs of any age) can have sensitive stomachs during the transition. If something goes wrong, your vet is going to ask what they've been eating and when it changed. You'll be glad you wrote it down instead of trying to remember whether it was Tuesday or Wednesday that you started mixing the new kibble in.</p>
+
+        <h2>2. Bathroom Habits</h2>
+
+        <p>I know, I know. Nobody wants to keep a poop journal. But especially in that first week, you want to know what's normal for your dog so you can spot when something isn't.</p>
+
+        <p>Just jot down roughly when they go, whether it was inside or outside (no judgement, it's week one), and if anything looked off. This is especially helpful if you're potty training, because you start to see patterns. Maybe they always need to go 20 minutes after eating. Maybe mornings are chaos but afternoons are fine. You won't see the pattern unless you're writing it down.</p>
+
+        <h2>3. Sleep Patterns</h2>
+
+        <p>New dogs sleep a lot. Puppies sleep even more. But the way they sleep and where they settle can tell you a lot about how they're adjusting.</p>
+
+        <p>Are they sleeping through the night or waking up every two hours? Are they napping in their crate or hiding under the couch? None of these things are necessarily problems on their own, but tracking them helps you notice when something changes. If your dog was sleeping fine and suddenly starts pacing at night, that's worth mentioning to your vet.</p>
+
+        <h2>4. Behaviour and Mood</h2>
+
+        <p>The first week is a huge adjustment for your dog, no matter their age or where they came from. They're in a brand new place with brand new people and brand new smells. Some dogs bounce right in. Others take a while to come out of their shell.</p>
+
+        <p>When I brought Scotty home from the rescue in Texas, he was so nervous. He'd flatten himself on the floor if you moved too fast. But day by day, he started to open up. If I hadn't been paying attention to those small changes, I might not have noticed how much progress he was actually making.</p>
+
+        <p>Note things like: Are they exploring or hiding? How are they around other people in the house? Other pets? Are they showing any fear of specific things (sounds, objects, the stairs)? This stuff is gold when you eventually talk to a trainer or your vet, because it gives them a picture of who your dog is, not just a snapshot from one appointment.</p>
+
+        <h2>5. Vet Info and Medical Stuff</h2>
+
+        <p>If your dog came with any paperwork (vaccination records, spay/neuter info, microchip number), put it all in one place right now. Don't wait. Future you will be so grateful.</p>
+
+        <p>Also write down: when is their next vet appointment? What questions do you want to ask? Are they on any medications or supplements? If you're anything like me, you'll think "I'll remember that" and then absolutely will not remember that.</p>
+
+        <p>With Zero, I didn't know if being a double merle meant there were other health things I should be watching for. I ended up doing a ton of research on my own, but it would have helped to have all his initial info organized from day one instead of scrambling to find it weeks later.</p>
+
+        <h2>6. What's Working and What Isn't</h2>
+
+        <p>This one is less medical and more practical, but it's worth writing down. What toys does your dog like? What treats get their attention? Did the crate go well or was it a disaster? What calms them down when they're stressed?</p>
+
+        <p>You're building a little user manual for your dog in real time. And honestly, if you ever need a pet sitter or a trainer to step in, having this kind of info written down makes everything easier for everyone.</p>
+
+        <h2>You Don't Have to Be Organized</h2>
+
+        <p>I want to be really clear about this. You do not need a colour-coded system. You don't need an app or a binder or a label maker (unless you want one, in which case, go wild). A scribbled notebook is fine. A notes app on your phone is fine. The backs of old envelopes would technically work.</p>
+
+        <p>The point isn't perfection. The point is that when week one turns into month one turns into year one, you'll have something to look back on. And the next time someone asks you "when did that start?" you won't have to stare at them blankly like I did.</p>
+
+        <div class="cta-box">
+            <h3>Want something a little more structured?</h3>
+            <p>I made a printable Puppy Starter Pack tracker that covers all of this and then some. It started as my own messy system for keeping up with Zero, and I turned it into something a little more organized (but still very much designed by a scattered brain).</p>
+            <a href="https://payhip.com/TheScatteredNest" class="btn btn-primary" target="_blank" rel="noopener">Check Out the Puppy Starter Pack</a>
+        </div>
+
+        <p>But honestly, even if you never use a tracker, just start writing things down. You'll thank yourself later. And your vet will too.</p>
+    </article>
+
+    <footer class="footer">
+        <p>&copy; 2026 The Scattered Nest. All rights reserved. | <a href="../privacy/">Privacy Policy</a> | <a href="../">Home</a></p>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 20); });
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => { navLinks.classList.toggle('open'); });
+        navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('open'); }); });
+    </script>
+</body>
+</html>

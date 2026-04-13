@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Prep Your Dog for the Groomer When You're Both Anxious - The Scattered Nest</title>
+    <meta name="description" content="Grooming doesn't have to be stressful for you or your dog. Tips for preparing your pup, what to track, and when it might be time to DIY.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple: #C99BE5;
+            --purple-dark: #A06CC8;
+            --purple-deeper: #7B4FA0;
+            --teal: #8CD6D8;
+            --teal-dark: #5BBFC2;
+            --bg-cream: #FAF8FC;
+            --bg-section: #F3EEF8;
+            --text-dark: #3D2C4E;
+            --text-mid: #6B5A7D;
+            --text-light: #9A8AAC;
+            --white: #FFFFFF;
+            --shadow-soft: 0 2px 20px rgba(160, 108, 200, 0.1);
+            --shadow-card: 0 4px 24px rgba(160, 108, 200, 0.12);
+            --radius: 16px;
+            --max-width: 760px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
+        a { color: var(--purple-dark); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--purple-deeper); }
+
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(250, 248, 252, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(201, 155, 229, 0.15);
+        }
+        .nav.scrolled { box-shadow: var(--shadow-soft); }
+        .nav-inner {
+            max-width: 1100px; margin: 0 auto; padding: 12px 24px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .nav-logo { height: 44px; width: auto; }
+        .nav-links { display: flex; gap: 28px; list-style: none; }
+        .nav-links a {
+            font-size: 0.92em; font-weight: 500; color: var(--text-mid);
+            letter-spacing: 0.02em; position: relative;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0;
+            width: 0; height: 2px; background: var(--teal); transition: width 0.3s;
+        }
+        .nav-links a:hover { color: var(--purple-dark); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--purple-dark); margin: 5px 0; transition: 0.3s; }
+
+        .article-header {
+            padding: 140px 24px 48px; text-align: center;
+            background: linear-gradient(180deg, var(--bg-cream) 0%, var(--bg-section) 100%);
+        }
+        .article-tag {
+            display: inline-block; background: var(--bg-section); color: var(--purple-dark);
+            font-size: 0.78em; font-weight: 600; padding: 6px 16px; border-radius: 20px;
+            margin-bottom: 16px; letter-spacing: 0.03em; text-transform: uppercase;
+        }
+        .article-header h1 {
+            font-size: 2.4em; color: var(--purple-dark); margin-bottom: 12px;
+            max-width: var(--max-width); margin-left: auto; margin-right: auto;
+        }
+        .article-meta { color: var(--text-light); font-size: 0.9em; }
+        .article-body {
+            max-width: var(--max-width); margin: 0 auto; padding: 48px 24px 80px;
+        }
+        .article-body p {
+            color: var(--text-mid); font-size: 1.02em; margin-bottom: 24px;
+            text-align: justify; hyphens: none;
+        }
+        .article-body .intro {
+            font-size: 1.1em; font-style: italic; color: var(--text-dark);
+            border-left: 3px solid var(--purple); padding-left: 20px;
+            margin-bottom: 32px; text-align: left;
+        }
+        .article-body h2 {
+            font-size: 1.5em; color: var(--purple-dark);
+            margin-top: 40px; margin-bottom: 16px;
+        }
+        .article-body h3 {
+            font-size: 1.2em; color: var(--purple-dark);
+            margin-top: 32px; margin-bottom: 12px;
+        }
+        .cta-box {
+            background: var(--bg-section); border-radius: var(--radius);
+            padding: 32px; text-align: center; margin: 48px 0;
+        }
+        .cta-box h3 {
+            font-size: 1.3em; color: var(--purple-dark);
+            margin-bottom: 12px; margin-top: 0;
+        }
+        .cta-box p { text-align: center !important; margin-bottom: 20px !important; }
+        .btn {
+            display: inline-block; padding: 14px 32px; border-radius: 50px;
+            font-size: 0.95em; font-weight: 600; letter-spacing: 0.02em;
+            transition: all 0.3s; cursor: pointer; border: none;
+        }
+        .btn-primary { background: var(--purple); color: var(--white); }
+        .btn-primary:hover {
+            background: var(--purple-dark); color: var(--white);
+            transform: translateY(-2px); box-shadow: 0 6px 20px rgba(160, 108, 200, 0.3);
+        }
+        .back-link {
+            display: inline-block; margin-bottom: 32px;
+            font-size: 0.9em; font-weight: 500; color: var(--teal-dark);
+        }
+        .back-link:hover { color: var(--purple-dark); }
+        .footer {
+            background: var(--text-dark); color: rgba(255,255,255,0.7);
+            padding: 32px 24px; text-align: center; font-size: 0.85em;
+        }
+        .footer a { color: var(--teal); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-links.open {
+                display: flex; flex-direction: column;
+                position: absolute; top: 68px; left: 0; right: 0;
+                background: rgba(250, 248, 252, 0.98);
+                padding: 24px; gap: 16px;
+                border-bottom: 1px solid rgba(201, 155, 229, 0.15);
+                box-shadow: var(--shadow-soft);
+            }
+            .nav-toggle { display: block; }
+            .article-header { padding: 120px 20px 36px; }
+            .article-header h1 { font-size: 1.8em; }
+            .article-body { padding: 36px 20px 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav" id="navbar">
+        <div class="nav-inner">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../#about">About</a></li>
+                <li><a href="../#shop">Shop</a></li>
+                <li><a href="./">Blog</a></li>
+                <li><a href="../#connect">Connect</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="article-header">
+        <span class="article-tag">Dog Grooming</span>
+        <h1>How to Prep Your Dog for the Groomer When You're Both Anxious</h1>
+        <p class="article-meta">May 25, 2026 &middot; By Rae</p>
+    </header>
+
+    <article class="article-body">
+        <a href="./" class="back-link">&larr; Back to all posts</a>
+
+        <p class="intro">Zero used to go to the groomer. Used to. Then he had a day at doggy daycare where there was construction nearby, loud banging and drilling, and right after that I took him to get his nails done. Now the groomer is a scary place. Not because anything bad happened there, but because his brain connected the dots in a way I didn't expect.</p>
+
+        <p>Dogs do that. They make associations that don't always make sense to us but are very real to them. One bad experience near a place, and suddenly that place is the problem. It doesn't matter that the groomer had nothing to do with the construction noise. To Zero, it all got lumped together.</p>
+
+        <p>So now I do grooming at home. I've watched a lot of videos, learned how to safely clip nails and trim paw fur, and we've made it work. But I know not everyone wants to go that route, and plenty of dogs do fine at the groomer with the right preparation. So whether you're getting your dog ready for their first grooming appointment or trying to make the next one less stressful, here's what I've learned.</p>
+
+        <h2>Start With Touch</h2>
+
+        <p>Before your dog ever goes near a grooming table, they need to be comfortable with being handled. That means getting them used to having their paws touched, their ears looked at, their face gently held.</p>
+
+        <p>This isn't a one-day thing. It's something you build over time, especially with puppies or rescue dogs who might not have had much positive handling experience. Just a few minutes a day of gentle touching, paired with treats, can make a big difference down the road.</p>
+
+        <p>With Scotty, this was easier. He's a miniature pinscher and chihuahua mix with short fur, so he doesn't need much grooming beyond baths and nail trims. He'll let me clip and file his nails without too much fuss. Zero is a different story. He'll cooperate, but he needs treats nearby and some patience. It's a process, not a performance.</p>
+
+        <h2>Get Them Used to the Sounds</h2>
+
+        <p>Clippers, dryers, running water. These are all sounds that can be startling if your dog hasn't heard them before. And if your dog is already anxious, a loud dryer blasting in their face at the groomer is not going to go well.</p>
+
+        <p>At home, you can start by running the clippers near them (not on them) while giving treats. Let them hear the sound and learn that it's not a threat. Same with the hair dryer. Turn it on across the room. If they're okay, move a little closer. If they're not, back off and try again tomorrow. No rush.</p>
+
+        <p>If your dog has noise sensitivities like Zero does, this step is extra important. He can hear more than people think, and certain sounds really get to him. Taking the time to introduce grooming sounds slowly can prevent the kind of negative association that happened with us and the construction noise.</p>
+
+        <h2>Choose Your Groomer Carefully</h2>
+
+        <p>Not all groomers are the same, and that's okay. Some are great with anxious dogs. Some are fast and efficient but not as patient. You want to find someone who's willing to go at your dog's pace, even if it takes a little longer.</p>
+
+        <p>A few things to look for:</p>
+
+        <p><strong>Ask if you can visit first.</strong> A good groomer will let you bring your dog in for a quick meet-and-greet without booking a full appointment. Let your dog sniff around, get a treat, and leave. No grooming, just a positive visit.</p>
+
+        <p><strong>Ask about their approach with nervous dogs.</strong> Do they use force-free handling? Are they willing to take breaks? Will they stop if your dog is clearly stressed? These are fair questions, and any groomer worth going to will be happy to answer them.</p>
+
+        <p><strong>Ask what happens if it's not going well.</strong> Will they call you? Will they push through anyway? You want someone who will stop and call you rather than force a stressed-out dog through a full groom.</p>
+
+        <h2>What to Tell Your Groomer</h2>
+
+        <p>Your groomer is not a mind reader. If your dog has specific fears, sensitivities, or health issues, tell them upfront. Don't assume they'll figure it out.</p>
+
+        <p>Things worth mentioning:</p>
+
+        <p><strong>Noise sensitivities.</strong> If your dog is scared of the dryer, say so. A good groomer can towel dry or use a low setting.</p>
+
+        <p><strong>Touch sensitivities.</strong> Does your dog hate having their paws touched? Their ears? Their tail? Let the groomer know so they can adjust.</p>
+
+        <p><strong>Health stuff.</strong> Skin conditions, lumps, sore spots, recent surgeries. Anything that might affect how they handle your dog.</p>
+
+        <p><strong>Behavioural stuff.</strong> If your dog snaps when startled (like Zero does), the groomer needs to know. It's not about labelling your dog as "bad." It's about keeping everyone safe.</p>
+
+        <h2>Keeping Track of Grooming</h2>
+
+        <p>One thing that really helps, whether you go to a groomer or do it yourself, is keeping a simple log. When was the last nail trim? When did you last check their ears? How did they react last time compared to the time before?</p>
+
+        <p>This is useful for the same reason training logs are useful. You can see patterns. Maybe your dog does better in the morning. Maybe they're calmer after a walk. Maybe they need a break between the nail trim and the bath. You won't know unless you're paying attention and writing it down.</p>
+
+        <p>It also helps you remember when things are due. I don't know about you, but I absolutely will not remember when Zero's nails were last trimmed unless I write it somewhere. They grow, I notice they're long, and then I think "wait, when did I last do this?" Having a log takes that guesswork out of it.</p>
+
+        <h2>When DIY Might Be the Better Option</h2>
+
+        <p>Sometimes going to the groomer just isn't the right fit for your dog. And that's okay. It doesn't mean you've failed or that your dog is broken. It means you're paying attention to what they need.</p>
+
+        <p>After what happened with Zero, switching to home grooming was the right call for us. It's slower, and I had to learn some new skills, but he's way less stressed. And honestly, so am I. I don't have to worry about what sounds he might hear at the groomer or whether he'll associate the visit with something scary again.</p>
+
+        <p>If you're thinking about doing grooming at home, there are tons of videos out there for nail trimming, paw fur trimming, and even basic haircuts. Start with the easy stuff (nail filing, brushing) and work your way up. You don't have to do everything at once.</p>
+
+        <div class="cta-box">
+            <h3>Want to keep grooming on track?</h3>
+            <p>My printable Dog Grooming Log helps you track appointments, at-home care, what went well, and what to do differently next time. Built for real life, not perfection.</p>
+            <a href="https://payhip.com/TheScatteredNest" class="btn btn-primary" target="_blank" rel="noopener">Check Out the Grooming Log</a>
+        </div>
+
+        <p>Whether you go to a groomer or DIY it on the kitchen floor with a towel and a bag of treats, the goal is the same: keep your dog comfortable and keep it from becoming a stressful event for either of you. It's not always going to be smooth, but it does get easier with practice and patience.</p>
+    </article>
+
+    <footer class="footer">
+        <p>&copy; 2026 The Scattered Nest. All rights reserved. | <a href="../privacy/">Privacy Policy</a> | <a href="../">Home</a></p>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 20); });
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => { navLinks.classList.toggle('open'); });
+        navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('open'); }); });
+    </script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walking a Reactive Dog: You're Not Failing - The Scattered Nest</title>
+    <meta name="description" content="If your dog barks, lunges, or loses it on walks, you're not a bad owner. Here's what life with reactive dogs actually looks like, and what helps.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple: #C99BE5;
+            --purple-dark: #A06CC8;
+            --purple-deeper: #7B4FA0;
+            --teal: #8CD6D8;
+            --teal-dark: #5BBFC2;
+            --bg-cream: #FAF8FC;
+            --bg-section: #F3EEF8;
+            --text-dark: #3D2C4E;
+            --text-mid: #6B5A7D;
+            --text-light: #9A8AAC;
+            --white: #FFFFFF;
+            --shadow-soft: 0 2px 20px rgba(160, 108, 200, 0.1);
+            --shadow-card: 0 4px 24px rgba(160, 108, 200, 0.12);
+            --radius: 16px;
+            --max-width: 760px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
+        a { color: var(--purple-dark); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--purple-deeper); }
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250, 248, 252, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(201, 155, 229, 0.15); }
+        .nav.scrolled { box-shadow: var(--shadow-soft); }
+        .nav-inner { max-width: 1100px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: center; }
+        .nav-links { display: flex; gap: 28px; list-style: none; }
+        .nav-links a { font-size: 0.92em; font-weight: 500; color: var(--text-mid); letter-spacing: 0.02em; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--teal); transition: width 0.3s; }
+        .nav-links a:hover { color: var(--purple-dark); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--purple-dark); margin: 5px 0; transition: 0.3s; }
+        .article-header { padding: 140px 24px 48px; text-align: center; background: linear-gradient(180deg, var(--bg-cream) 0%, var(--bg-section) 100%); }
+        .article-tag { display: inline-block; background: var(--bg-section); color: var(--purple-dark); font-size: 0.78em; font-weight: 600; padding: 6px 16px; border-radius: 20px; margin-bottom: 16px; letter-spacing: 0.03em; text-transform: uppercase; }
+        .article-header h1 { font-size: 2.4em; color: var(--purple-dark); margin-bottom: 12px; max-width: var(--max-width); margin-left: auto; margin-right: auto; }
+        .article-meta { color: var(--text-light); font-size: 0.9em; }
+        .article-body { max-width: var(--max-width); margin: 0 auto; padding: 48px 24px 80px; }
+        .article-body p { color: var(--text-mid); font-size: 1.02em; margin-bottom: 24px; text-align: justify; hyphens: none; }
+        .article-body .intro { font-size: 1.1em; font-style: italic; color: var(--text-dark); border-left: 3px solid var(--purple); padding-left: 20px; margin-bottom: 32px; text-align: left; }
+        .article-body h2 { font-size: 1.5em; color: var(--purple-dark); margin-top: 40px; margin-bottom: 16px; }
+        .article-body h3 { font-size: 1.2em; color: var(--purple-dark); margin-top: 32px; margin-bottom: 12px; }
+        .cta-box { background: var(--bg-section); border-radius: var(--radius); padding: 32px; text-align: center; margin: 48px 0; }
+        .cta-box h3 { font-size: 1.3em; color: var(--purple-dark); margin-bottom: 12px; margin-top: 0; }
+        .cta-box p { text-align: center !important; margin-bottom: 20px !important; }
+        .btn { display: inline-block; padding: 14px 32px; border-radius: 50px; font-size: 0.95em; font-weight: 600; letter-spacing: 0.02em; transition: all 0.3s; cursor: pointer; border: none; }
+        .btn-primary { background: var(--purple); color: var(--white); }
+        .btn-primary:hover { background: var(--purple-dark); color: var(--white); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(160, 108, 200, 0.3); }
+        .back-link { display: inline-block; margin-bottom: 32px; font-size: 0.9em; font-weight: 500; color: var(--teal-dark); }
+        .back-link:hover { color: var(--purple-dark); }
+        .footer { background: var(--text-dark); color: rgba(255,255,255,0.7); padding: 32px 24px; text-align: center; font-size: 0.85em; }
+        .footer a { color: var(--teal); }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: rgba(250, 248, 252, 0.98); padding: 24px; gap: 16px; border-bottom: 1px solid rgba(201, 155, 229, 0.15); box-shadow: var(--shadow-soft); }
+            .nav-toggle { display: block; }
+            .article-header { padding: 120px 20px 36px; }
+            .article-header h1 { font-size: 1.8em; }
+            .article-body { padding: 36px 20px 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav" id="navbar">
+        <div class="nav-inner">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../#about">About</a></li>
+                <li><a href="../#shop">Shop</a></li>
+                <li><a href="./">Blog</a></li>
+                <li><a href="../#connect">Connect</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="article-header">
+        <span class="article-tag">Reactive Dogs</span>
+        <h1>Walking a Reactive Dog: You're Not Failing</h1>
+        <p class="article-meta">July 20, 2026 &middot; By Rae</p>
+    </header>
+
+    <article class="article-body">
+        <a href="./" class="back-link">&larr; Back to all posts</a>
+
+        <p class="intro">There's a retired neighbour down our street who is genuinely one of the sweetest people I've ever met. She loves dogs. She always waves at us. And every single time we walk past her house, Scotty loses his absolute mind like she's a home invader, and then Zero joins in because he trusts Scotty's threat assessment. She's not a threat. She's lovely. My dogs don't care.</p>
+
+        <p>If you have a reactive dog, you know this feeling. The embarrassment. The frustration. The people staring at you while your dog is barking and lunging and you're trying to hold it together on the other end of the leash. It's exhausting. And it can make you feel like you're doing something wrong, like other people have well-behaved dogs and you somehow got the broken one.</p>
+
+        <p>You didn't. Your dog isn't broken. And you're not failing. Reactivity is incredibly common, it just doesn't get talked about enough because people feel ashamed of it.</p>
+
+        <h2>Why Dogs Become Reactive</h2>
+
+        <p>Reactivity isn't about being a "bad dog." It's usually about fear, frustration, or overstimulation. Something in the environment triggers a big response because your dog doesn't know how else to handle what they're feeling.</p>
+
+        <p>With Zero, it started after he'd been pinned by other dogs more than once. Dogs that their owners swore were friendly. But Zero can't see well and he can't hear much. He can't read other dogs' body language, and he can't send the right signals back. So what happens is a dog approaches, Zero doesn't respond the way they expect, and things escalate fast. After enough of those experiences, he learned to react first. If something is suddenly in his face, he will snap. Not because he's aggressive. Because he's scared, and that's the only tool he has.</p>
+
+        <p>Scotty's reactivity is different. He's territorial. On our street, in our neighbourhood, everything is a threat. People, dogs, kids on bikes, someone closing a car door a little too loudly. He goes from zero to a hundred in a heartbeat. But here's the funny thing: if we take him somewhere he's never been, he's fine. Totally calm. Sniffing around, minding his own business. It's only his turf that he feels the need to defend.</p>
+
+        <p>Every reactive dog has their own reasons. Understanding why your dog is reacting is the first step to figuring out how to help them.</p>
+
+        <h2>The Leash Problem Nobody Talks About</h2>
+
+        <p>This is the thing that frustrates me the most. Where I live, there's a bylaw that says all dogs must be on a leash unless you're in a designated off-leash area. It's a rule. It exists for everyone's safety. And so many people ignore it.</p>
+
+        <p>Their dog is running loose in the park, or off-leash on the trail, or standing unleashed in their front yard. And they always say the same thing: "Don't worry, he's friendly!"</p>
+
+        <p>That doesn't matter. My dog is on a leash. If your dog runs up to mine, I have no way to protect my dog, and you have no control over yours. Zero has been pinned by "friendly" dogs. He's been startled and scared by dogs that came bounding up out of nowhere. Each one of those encounters made his reactivity worse. And I had no way to prevent it because my dog was leashed and theirs wasn't.</p>
+
+        <p>If you have a reactive dog, this is probably your biggest frustration too. You're doing everything right. Short leash, watching the environment, crossing the street to avoid triggers. And then someone else's off-leash dog undoes weeks of careful work in ten seconds.</p>
+
+        <p>I don't have a solution for this one. I wish I did. But I want you to know that if this happens to you, it's not your fault. You can't control other people. You can only control what you do, and the fact that you're trying this hard means you're a good dog owner.</p>
+
+        <h2>Managing Walks (The Real Version)</h2>
+
+        <p>Let me tell you what walks actually look like for us, because I think the internet makes it seem like reactive dog walks should look like a calm training exercise. They don't. Not always.</p>
+
+        <p>In the summer, I walk Zero and Scotty separately. One reactive dog at a time is manageable. Two at once is chaos. In the winter, when there are fewer triggers (no kids outside, no open windows, quieter streets), I can walk them together. I often end up carrying Scotty in my jacket because he gets cold in about three minutes, and honestly, a cold Scotty in a jacket is a much calmer Scotty than one whose paws are freezing on the pavement.</p>
+
+        <p>We have a spot near our house that works well. A big parking lot with grass around it. Good sight lines, so I can see if someone is coming, and I can duck between cars if I need to create space quickly. That's what reactive dog walks are about. Not fixing the behaviour on the spot, but managing the environment so your dog doesn't get pushed over their threshold.</p>
+
+        <h2>Conditioning Works (But It's Slow)</h2>
+
+        <p>I've been working with Scotty on his reactivity. It's a work in progress, and I mean a real work in progress. Not the Instagram version where a dog goes from barking to calm in a neat 30-second video.</p>
+
+        <p>One thing I've learned is that a dog with a working nose is not a dog who's about to react. When you're outside doing conditioning work, the stinkier the treats, the better. You want something high-value, something your dog doesn't get every day, something that smells so good it's worth paying attention to even when the neighbour is existing on the sidewalk.</p>
+
+        <p>I use Scotty's dinner time to work on his kennel training. Getting him to stay in his kennel with the door open, building up from two steps back to four steps to out of his line of sight. He doesn't get it every time. But there's been a lot of improvement, and that progress keeps me going.</p>
+
+        <p>Conditioning is all baby steps. You're not going to fix reactivity in a week or a month. But if you're tracking what you're doing and how your dog responds, you can see the improvement over time, even when individual days feel like a mess.</p>
+
+        <h2>The Emotional Part</h2>
+
+        <p>Nobody talks about how emotionally heavy it is to have a reactive dog. The walks that go badly stick with you. The judgement from other people sticks with you. The feeling that you should be doing more, doing better, that other people make it look easy.</p>
+
+        <p>I have had walks where both dogs were barking and I was just trying to get us home in one piece, and I felt like the worst dog owner on the planet. I have skipped walks because I couldn't handle the possibility of another bad one. I have cried about it, more than once.</p>
+
+        <p>If that's you too, I want you to hear this: the fact that you care this much means your dog is lucky to have you. A bad dog owner wouldn't be reading a blog post about reactive dogs at 10 pm on a Tuesday. They wouldn't be trying different routes, and different treats, and different approaches. They wouldn't feel bad about it at all.</p>
+
+        <p>You're trying. And that matters way more than having a perfect walk.</p>
+
+        <h2>What Helps (Practically)</h2>
+
+        <p>A few things that have made a real difference for me:</p>
+
+        <p><strong>Know your routes.</strong> Find places where you can see what's coming and create distance quickly. Parking lots, quiet side streets, paths with good visibility. Avoid tight spots where you can't escape a trigger.</p>
+
+        <p><strong>Walk at off-peak times.</strong> Early mornings, late evenings, or whenever your neighbourhood is quietest. Fewer triggers means more successful walks, and more successful walks build your dog's confidence (and yours).</p>
+
+        <p><strong>Carry high-value treats.</strong> The smelliest ones you can find. When you see a trigger coming, you want something that can compete for your dog's attention. Regular kibble isn't going to cut it when there's a stranger on the horizon.</p>
+
+        <p><strong>Track your walks.</strong> Write down what happened. Where you went, what triggers you encountered, how your dog responded. Over time, you'll see patterns. Maybe mornings are better than evenings. Maybe certain routes are calmer. Maybe your dog does better after a nap. You can't adjust what you're doing if you don't know what's actually happening.</p>
+
+        <p><strong>Celebrate the quiet walks.</strong> When nothing happens, that's a win. It doesn't feel like one, because nothing happening isn't exciting. But a boring walk with a reactive dog is the goal. Notice it. Write it down. Let it count.</p>
+
+        <div class="cta-box">
+            <h3>Want to start tracking triggers and progress?</h3>
+            <p>I built a Reactive Dog Tracker for exactly this. It covers triggers, reactions, what you tried, and how it went. It's the same kind of tracking that's helped me see progress with Zero and Scotty, even on the hard days.</p>
+            <a href="https://payhip.com/TheScatteredNest" class="btn btn-primary" target="_blank" rel="noopener">Check Out the Reactive Dog Tracker</a>
+        </div>
+
+        <p>If you're walking a reactive dog, you're not failing. You're doing one of the hardest things in dog ownership, and you're showing up for your dog even when it doesn't go well. That's not failure. That's love. And your dog knows it, even if they have a weird way of showing it by barking at the neighbour.</p>
+    </article>
+
+    <footer class="footer">
+        <p>&copy; 2026 The Scattered Nest. All rights reserved. | <a href="../privacy/">Privacy Policy</a> | <a href="../">Home</a></p>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 20); });
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => { navLinks.classList.toggle('open'); });
+        navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('open'); }); });
+    </script>
+</body>
+</html>

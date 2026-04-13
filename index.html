@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Scattered Nest - Where the Chaos Lands Softly</title>
+    <meta name="description" content="The Scattered Nest - printable dog care trackers, fun gifts, and cozy products for scattered dog parents. Where the chaos lands softly.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* ============ CSS VARIABLES / BRAND COLORS ============ */
+        :root {
+            --purple: #C99BE5;
+            --purple-dark: #A06CC8;
+            --purple-deeper: #7B4FA0;
+            --teal: #8CD6D8;
+            --teal-dark: #5BBFC2;
+            --bg-cream: #FAF8FC;
+            --bg-section: #F3EEF8;
+            --text-dark: #3D2C4E;
+            --text-mid: #6B5A7D;
+            --text-light: #9A8AAC;
+            --white: #FFFFFF;
+            --shadow-soft: 0 2px 20px rgba(160, 108, 200, 0.1);
+            --shadow-card: 0 4px 24px rgba(160, 108, 200, 0.12);
+            --radius: 16px;
+            --max-width: 1100px;
+        }
+
+        /* ============ RESET & BASE ============ */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: var(--purple-dark); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--purple-deeper); }
+
+        /* ============ NAVIGATION ============ */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(250, 248, 252, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(201, 155, 229, 0.15);
+            transition: box-shadow 0.3s;
+        }
+        .nav.scrolled { box-shadow: var(--shadow-soft); }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-logo {
+            height: 44px;
+            width: auto;
+        }
+        .nav-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2em;
+            color: var(--purple-dark);
+            font-weight: 600;
+        }
+        .nav-links { display: flex; gap: 28px; list-style: none; }
+        .nav-links a {
+            font-size: 0.92em;
+            font-weight: 500;
+            color: var(--text-mid);
+            letter-spacing: 0.02em;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--teal);
+            transition: width 0.3s;
+        }
+        .nav-links a:hover { color: var(--purple-dark); }
+        .nav-links a:hover::after { width: 100%; }
+
+        /* Mobile hamburger */
+        .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--purple-dark);
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* ============ HERO ============ */
+        .hero {
+            padding: 100px 24px 40px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--bg-cream) 0%, var(--bg-section) 100%);
+        }
+        .hero-banner {
+            max-width: 400px;
+            margin: 0 auto 16px;
+            display: block;
+        }
+        .hero h1 {
+            font-size: 3em;
+            color: var(--purple-dark);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        .hero .tagline {
+            font-size: 1.25em;
+            color: var(--teal-dark);
+            font-weight: 300;
+            letter-spacing: 0.03em;
+            margin-bottom: 28px;
+        }
+        .hero .subtitle {
+            font-size: 1.05em;
+            color: var(--text-mid);
+            max-width: 560px;
+            margin: 0 auto 36px;
+        }
+        .hero-cta {
+            display: inline-flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-size: 0.95em;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-primary {
+            background: var(--purple);
+            color: var(--white);
+        }
+        .btn-primary:hover {
+            background: var(--purple-dark);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(160, 108, 200, 0.3);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--purple-dark);
+            border: 2px solid var(--purple);
+        }
+        .btn-outline:hover {
+            background: var(--purple);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* ============ SECTION SHARED ============ */
+        .section {
+            padding: 80px 24px;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+        .section-alt { background: var(--bg-section); }
+        .section-alt .section { padding: 80px 24px; }
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .section-header h2 {
+            font-size: 2.2em;
+            color: var(--purple-dark);
+            margin-bottom: 12px;
+        }
+        .section-header p {
+            color: var(--text-mid);
+            font-size: 1.05em;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--purple), var(--teal));
+            margin: 16px auto 0;
+            border-radius: 2px;
+        }
+
+        /* ============ ABOUT ============ */
+        .about-content {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .about-text h3 {
+            font-size: 1.5em;
+            color: var(--purple-dark);
+            margin-bottom: 16px;
+        }
+        .about-text p {
+            color: var(--text-mid);
+            margin-bottom: 16px;
+            font-size: 1em;
+            text-align: justify;
+            hyphens: none;
+        }
+        .about-values {
+            display: flex;
+            gap: 24px;
+            margin-top: 24px;
+        }
+        .value-item {
+            text-align: center;
+            flex: 1;
+        }
+        .value-icon {
+            font-size: 1.8em;
+            margin-bottom: 8px;
+        }
+        .value-item span {
+            font-size: 0.85em;
+            color: var(--text-mid);
+            font-weight: 500;
+        }
+
+        /* ============ PRODUCTS ============ */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        .product-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(160, 108, 200, 0.18);
+        }
+        .product-card-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            background: linear-gradient(135deg, var(--bg-section), #E8D9F5);
+        }
+        .product-card-body {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        .product-card-body h3 {
+            font-size: 1.3em;
+            color: var(--purple-dark);
+            margin-bottom: 8px;
+        }
+        .product-card-body p {
+            color: var(--text-mid);
+            font-size: 0.95em;
+            margin-bottom: 16px;
+            flex: 1;
+        }
+        .product-card-body .btn { font-size: 0.88em; padding: 10px 24px; align-self: center; }
+
+        /* Styled product card visuals */
+        .product-visual {
+            width: 100%;
+            aspect-ratio: 4/3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 24px;
+        }
+        .product-visual.trackers {
+            background: linear-gradient(135deg, #EDE3F5 0%, #D4F0F1 100%);
+        }
+        .product-visual.scattered {
+            background: linear-gradient(135deg, #D4F0F1 0%, #EDE3F5 100%);
+        }
+        .product-visual.binder {
+            background: linear-gradient(135deg, #E8D9F5 0%, #C5ECED 50%, #EDE3F5 100%);
+        }
+        .product-visual-icon {
+            font-size: 3.5em;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 2;
+        }
+        .product-visual h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--purple-dark);
+            font-size: 1.15em;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 4px;
+        }
+        .product-visual .product-visual-sub {
+            font-size: 0.8em;
+            color: var(--text-mid);
+            position: relative;
+            z-index: 2;
+        }
+        /* Floating decorations */
+        .product-visual .deco {
+            position: absolute;
+            opacity: 0.12;
+            font-size: 2em;
+            z-index: 1;
+        }
+        .product-visual .deco-1 { top: 16px; right: 20px; transform: rotate(15deg); }
+        .product-visual .deco-2 { bottom: 16px; left: 20px; transform: rotate(-10deg); }
+        .product-visual .deco-3 { top: 40%; left: 12px; font-size: 1.4em; transform: rotate(25deg); }
+        .product-visual .deco-4 { bottom: 30%; right: 16px; font-size: 1.6em; transform: rotate(-20deg); }
+
+        /* Placeholder image styling (blog) */
+        .placeholder-img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, #EDE3F5, #D4F0F1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+
+        /* ============ BLOG ============ */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        .blog-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(160, 108, 200, 0.18);
+        }
+        .blog-card-image {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            background: linear-gradient(135deg, #D4F0F1, #EDE3F5);
+        }
+        .blog-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+        .blog-card-tag {
+            display: inline-block;
+            background: var(--bg-section);
+            color: var(--purple-dark);
+            font-size: 0.78em;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+        .blog-card-body h3 {
+            font-size: 1.2em;
+            color: var(--purple-dark);
+            margin-bottom: 8px;
+        }
+        .blog-card-body p {
+            color: var(--text-mid);
+            font-size: 0.92em;
+            margin-bottom: 16px;
+            flex: 1;
+        }
+        .blog-card-body .read-more {
+            font-size: 0.9em;
+            font-weight: 600;
+            color: var(--teal-dark);
+        }
+        .blog-card-body .read-more:hover { color: var(--purple-dark); }
+
+        /* ============ FOOTER ============ */
+        .footer {
+            background: var(--text-dark);
+            color: rgba(255,255,255,0.7);
+            padding: 48px 24px 24px;
+        }
+        .footer-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+        }
+        .footer h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--purple);
+            font-size: 1.1em;
+            margin-bottom: 16px;
+        }
+        .footer p { font-size: 0.9em; line-height: 1.7; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 8px; }
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+        .footer-links a:hover { color: var(--teal); }
+        .footer-social { display: flex; gap: 16px; margin-top: 16px; }
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.85em;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .footer-social a:hover {
+            background: var(--purple);
+            color: var(--white);
+        }
+        .footer-bottom {
+            max-width: var(--max-width);
+            margin: 32px auto 0;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.82em;
+        }
+        .footer-bottom a { color: var(--teal); }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                right: 0;
+                background: rgba(250, 248, 252, 0.98);
+                padding: 24px;
+                gap: 16px;
+                border-bottom: 1px solid rgba(201, 155, 229, 0.15);
+                box-shadow: var(--shadow-soft);
+            }
+            .nav-toggle { display: block; }
+
+            .hero { padding: 80px 20px 32px; }
+            .hero-banner { max-width: 280px; }
+            .hero h1 { font-size: 2.2em; }
+            .hero .tagline { font-size: 1.05em; }
+
+            .about-values { gap: 16px; }
+
+            .product-grid, .blog-grid { grid-template-columns: 1fr; }
+
+            .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+
+            .section { padding: 60px 20px; }
+            .section-header h2 { font-size: 1.8em; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ NAVIGATION ============ -->
+    <nav class="nav" id="navbar">
+        <div class="nav-inner">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="blog/">Blog</a></li>
+                <li><a href="#connect">Connect</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+        <img src="images/logo-banner.png" alt="The Scattered Nest banner" class="hero-banner">
+        <p class="tagline">Where the chaos lands softly</p>
+        <p class="subtitle">
+            Printable dog care trackers, fun gifts, and cozy
+            products for scattered minds who recharge with their pups.
+        </p>
+        <div class="hero-cta">
+            <a href="#shop" class="btn btn-primary">Browse the Shop</a>
+            <a href="#blog" class="btn btn-outline">Read the Blog</a>
+        </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <div class="section-alt">
+        <section class="section" id="about">
+            <div class="section-header">
+                <h2>Our Story</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Life's a little messy. We love it that way.</h3>
+                    <p>
+                        The Scattered Nest started with two dogs and a whole lot of sticky notes.
+                        Zero is a one-eyed double merle Border Collie who navigates the world without
+                        sight or sound, and somehow still runs the household. Scotty is a Miniature
+                        Pinscher-Chihuahua mix with the confidence of a Great Dane and zero concept
+                        of personal space. They're both sensitive to the big wide world and have a lot
+                        of feelings about other dogs, but at home? Absolute angels. Best friends.
+                        Total couch hogs.
+                    </p>
+                    <p>
+                        Keeping track of their vet visits, medications, behaviours, and training progress
+                        started as survival, and turned into something worth sharing. I'm not a trainer,
+                        but I've learned from some great ones, done a lot of research, and figured out
+                        even more through pure trial, error, and treats. Everything here comes from real
+                        life with real dogs, one scattered day at a time.
+                    </p>
+                    <p>
+                        Whether you're running on hyperfocus, recharging with your pup, or just
+                        embracing the beautiful chaos, you're in the right nest.
+                    </p>
+                    <div class="about-values">
+                        <div class="value-item">
+                            <div class="value-icon">&#128062;</div>
+                            <span>Dog-Obsessed</span>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">&#128156;</div>
+                            <span>Made with Love</span>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">&#127968;</div>
+                            <span>Cozy Vibes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ============ PRODUCTS ============ -->
+    <section class="section" id="shop">
+        <div class="section-header">
+            <h2>Shop Our Collections</h2>
+            <p>Printable dog trackers, fun gifts, and cozy gear for scattered dog parents.</p>
+            <div class="accent-line"></div>
+        </div>
+        <div class="product-grid">
+
+            <!-- Digital Downloads -->
+            <div class="product-card">
+                <div class="product-visual trackers">
+                    <span class="deco deco-1">&#128062;</span>
+                    <span class="deco deco-2">&#127807;</span>
+                    <span class="deco deco-3">&#11088;</span>
+                    <span class="deco deco-4">&#128156;</span>
+                    <div class="product-visual-icon">&#128203;</div>
+                    <h4>Dog Care Trackers</h4>
+                    <span class="product-visual-sub">Printable health logs &amp; vet records</span>
+                </div>
+                <div class="product-card-body">
+                    <h3>Dog Care Trackers</h3>
+                    <p>
+                        Printable health logs, medication trackers, vet visit records,
+                        and more. Everything you need to stay on top of your pup's wellbeing.
+                    </p>
+                    <a href="https://payhip.com/TheScatteredNest" class="btn btn-primary" target="_blank" rel="noopener">Shop on Payhip</a>
+                </div>
+            </div>
+
+            <!-- Print on Demand -->
+            <div class="product-card">
+                <div class="product-visual scattered">
+                    <span class="deco deco-1">&#128156;</span>
+                    <span class="deco deco-2">&#128062;</span>
+                    <span class="deco deco-3">&#9889;</span>
+                    <span class="deco deco-4">&#127793;</span>
+                    <div class="product-visual-icon">&#9749;</div>
+                    <h4>Gifts for Scattered Minds</h4>
+                    <span class="product-visual-sub">Tees, mugs, stickers &amp; more</span>
+                </div>
+                <div class="product-card-body">
+                    <h3>Gifts for Scattered Minds</h3>
+                    <p>
+                        Stickers, mugs, tees, totes, and hats. Witty designs for
+                        dog lovers who run on hyperfocus and spite.
+                    </p>
+                    <a href="https://www.redbubble.com/people/ScatteredNest/shop" class="btn btn-primary" target="_blank" rel="noopener">Shop on Redbubble</a>
+                </div>
+            </div>
+
+            <!-- Full Binder -->
+            <div class="product-card">
+                <div class="product-visual binder">
+                    <span class="deco deco-1">&#127793;</span>
+                    <span class="deco deco-2">&#11088;</span>
+                    <span class="deco deco-3">&#128062;</span>
+                    <span class="deco deco-4">&#128156;</span>
+                    <div class="product-visual-icon">&#128214;</div>
+                    <h4>The Complete Binder</h4>
+                    <span class="product-visual-sub">Every tracker in one download</span>
+                </div>
+                <div class="product-card-body">
+                    <h3>The Full Dog Care Binder</h3>
+                    <p>
+                        Our all-in-one printable binder with every tracker,
+                        log, and planner page your pet-parent heart desires. One download, total peace of mind.
+                    </p>
+                    <a href="https://payhip.com/TheScatteredNest" class="btn btn-primary" target="_blank" rel="noopener">Get the Binder</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ BLOG ============ -->
+    <div class="section-alt">
+        <section class="section" id="blog">
+            <div class="section-header">
+                <h2>From the Nest</h2>
+                <p>Tips, stories, and real-life dog care advice from one scattered dog parent to another.</p>
+                <div class="accent-line"></div>
+            </div>
+            <div style="text-align: center;">
+                <a href="blog/" class="btn btn-primary">Visit the Blog</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- ============ CONNECT / FOOTER ============ -->
+    <footer class="footer" id="connect">
+        <div class="footer-inner">
+            <div>
+                <h4>The Scattered Nest</h4>
+                <p>
+                    Cozy printables, pet trackers, and thoughtful gifts for the beautifully chaotic
+                    life of a dog parent. Made with love from a fellow scattered nester.
+                </p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/profile.php?id=61574701513546" target="_blank" rel="noopener" title="Facebook">FB</a>
+                    <a href="https://www.pinterest.com/TheScatteredNest/" target="_blank" rel="noopener" title="Pinterest">Pin</a>
+                    <a href="https://www.redbubble.com/people/ScatteredNest/shop" target="_blank" rel="noopener" title="Redbubble">RB</a>
+                    <a href="https://payhip.com/TheScatteredNest" target="_blank" rel="noopener" title="Payhip">PH</a>
+                </div>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="privacy/">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Shop</h4>
+                <ul class="footer-links">
+                    <li><a href="https://payhip.com/TheScatteredNest" target="_blank" rel="noopener">Digital Downloads</a></li>
+                    <li><a href="https://www.redbubble.com/people/ScatteredNest/shop" target="_blank" rel="noopener">Print on Demand</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Scattered Nest. All rights reserved. | <a href="privacy/">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <!-- ============ JAVASCRIPT ============ -->
+    <script>
+        // Navbar scroll shadow
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 20);
+        });
+
+        // Mobile nav toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+
+        // Close mobile nav on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

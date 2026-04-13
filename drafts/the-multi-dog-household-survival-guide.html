@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Multi-Dog Household Survival Guide - The Scattered Nest</title>
+    <meta name="description" content="Real talk about living with two very different dogs. From feeding separately to managing play time between a 50lb border collie and a 10lb min pin mix.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple: #C99BE5;
+            --purple-dark: #A06CC8;
+            --purple-deeper: #7B4FA0;
+            --teal: #8CD6D8;
+            --teal-dark: #5BBFC2;
+            --bg-cream: #FAF8FC;
+            --bg-section: #F3EEF8;
+            --text-dark: #3D2C4E;
+            --text-mid: #6B5A7D;
+            --text-light: #9A8AAC;
+            --white: #FFFFFF;
+            --shadow-soft: 0 2px 20px rgba(160, 108, 200, 0.1);
+            --shadow-card: 0 4px 24px rgba(160, 108, 200, 0.12);
+            --radius: 16px;
+            --max-width: 760px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
+        a { color: var(--purple-dark); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--purple-deeper); }
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250, 248, 252, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(201, 155, 229, 0.15); }
+        .nav.scrolled { box-shadow: var(--shadow-soft); }
+        .nav-inner { max-width: 1100px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: center; }
+        .nav-links { display: flex; gap: 28px; list-style: none; }
+        .nav-links a { font-size: 0.92em; font-weight: 500; color: var(--text-mid); letter-spacing: 0.02em; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--teal); transition: width 0.3s; }
+        .nav-links a:hover { color: var(--purple-dark); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--purple-dark); margin: 5px 0; transition: 0.3s; }
+        .article-header { padding: 140px 24px 48px; text-align: center; background: linear-gradient(180deg, var(--bg-cream) 0%, var(--bg-section) 100%); }
+        .article-tag { display: inline-block; background: var(--bg-section); color: var(--purple-dark); font-size: 0.78em; font-weight: 600; padding: 6px 16px; border-radius: 20px; margin-bottom: 16px; letter-spacing: 0.03em; text-transform: uppercase; }
+        .article-header h1 { font-size: 2.4em; color: var(--purple-dark); margin-bottom: 12px; max-width: var(--max-width); margin-left: auto; margin-right: auto; }
+        .article-meta { color: var(--text-light); font-size: 0.9em; }
+        .article-body { max-width: var(--max-width); margin: 0 auto; padding: 48px 24px 80px; }
+        .article-body p { color: var(--text-mid); font-size: 1.02em; margin-bottom: 24px; text-align: justify; hyphens: none; }
+        .article-body .intro { font-size: 1.1em; font-style: italic; color: var(--text-dark); border-left: 3px solid var(--purple); padding-left: 20px; margin-bottom: 32px; text-align: left; }
+        .article-body h2 { font-size: 1.5em; color: var(--purple-dark); margin-top: 40px; margin-bottom: 16px; }
+        .article-body h3 { font-size: 1.2em; color: var(--purple-dark); margin-top: 32px; margin-bottom: 12px; }
+        .cta-box { background: var(--bg-section); border-radius: var(--radius); padding: 32px; text-align: center; margin: 48px 0; }
+        .cta-box h3 { font-size: 1.3em; color: var(--purple-dark); margin-bottom: 12px; margin-top: 0; }
+        .cta-box p { text-align: center !important; margin-bottom: 20px !important; }
+        .btn { display: inline-block; padding: 14px 32px; border-radius: 50px; font-size: 0.95em; font-weight: 600; letter-spacing: 0.02em; transition: all 0.3s; cursor: pointer; border: none; }
+        .btn-primary { background: var(--purple); color: var(--white); }
+        .btn-primary:hover { background: var(--purple-dark); color: var(--white); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(160, 108, 200, 0.3); }
+        .back-link { display: inline-block; margin-bottom: 32px; font-size: 0.9em; font-weight: 500; color: var(--teal-dark); }
+        .back-link:hover { color: var(--purple-dark); }
+        .footer { background: var(--text-dark); color: rgba(255,255,255,0.7); padding: 32px 24px; text-align: center; font-size: 0.85em; }
+        .footer a { color: var(--teal); }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: rgba(250, 248, 252, 0.98); padding: 24px; gap: 16px; border-bottom: 1px solid rgba(201, 155, 229, 0.15); box-shadow: var(--shadow-soft); }
+            .nav-toggle { display: block; }
+            .article-header { padding: 120px 20px 36px; }
+            .article-header h1 { font-size: 1.8em; }
+            .article-body { padding: 36px 20px 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav" id="navbar">
+        <div class="nav-inner">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../#about">About</a></li>
+                <li><a href="../#shop">Shop</a></li>
+                <li><a href="./">Blog</a></li>
+                <li><a href="../#connect">Connect</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="article-header">
+        <span class="article-tag">Multi-Dog Life</span>
+        <h1>The Multi-Dog Household Survival Guide</h1>
+        <p class="article-meta">July 6, 2026 &middot; By Rae</p>
+    </header>
+
+    <article class="article-body">
+        <a href="./" class="back-link">&larr; Back to all posts</a>
+
+        <p class="intro">Zero is a 50-pound border collie. Scotty is a 10-pound miniature pinscher and chihuahua mix. You'd think Zero would be the one running the show. You would be wrong.</p>
+
+        <p>Living with two dogs is not just "having a dog, but twice." It's a completely different experience. Different routines, different needs, different personalities that sometimes clash and sometimes line up perfectly. And a whole lot of moments where you're standing in the kitchen wondering how a dog that weighs less than a bag of flour has this much authority over a dog five times his size.</p>
+
+        <h2>Feeding: Separate Spaces, No Exceptions</h2>
+
+        <p>This was one of the first things we figured out when Scotty joined the family. Zero has always eaten in his kennel. I learned early on with him that crate training works best when you build positive associations from the start, and feeding meals in the kennel was part of that. So when Scotty arrived, I did the same thing.</p>
+
+        <p>But we quickly realized that Scotty did not want Zero anywhere near him while he was eating. He would guard his food. Not in a scary way, but in a very clear "this is mine and nobody is getting it" way. I think it goes back to where he came from. He was born in a high-kill shelter and spent his early life in a rescue with 49 other dogs. I don't know what mealtimes looked like there, but I imagine he had to compete for every bite.</p>
+
+        <p>We wanted Scotty to know that his food was his. That no one was going to take it. That he had a safe space to eat in peace. So they eat separately, every time, no exceptions. It's not complicated. It's just something you have to be consistent about.</p>
+
+        <p>If you have multiple dogs and one of them gets tense around food, don't try to train it out of them by forcing them to eat together. Just give them their own space. It's one of those things that's easier to manage than to fix, and it keeps mealtimes calm for everyone.</p>
+
+        <h2>The Size Difference Is Real</h2>
+
+        <p>When your dogs are this different in size, things get interesting. Zero is gentle with Scotty. He really is. When they play together, Zero gets down on his back and they do that open-mouth teeth thing that dogs do, where it looks like a competition to see who can open their mouth wider. It's hilarious and a little alarming if you don't know that's just how dogs play.</p>
+
+        <p>But the toy situation is constant. I never have to tell Zero to leave Scotty's small toys alone. He's not interested. Scotty, on the other hand, is obsessed with Zero's big toys. He will drag a toy that is literally as big as he is across the room like he won a prize. And Zero just stands there looking at me like "are you going to do something about this?"</p>
+
+        <p>So yes, I spend a fair amount of time retrieving Zero's toys from Scotty's collection pile. It's part of the routine at this point.</p>
+
+        <h2>Walking Two Dogs With Different Needs</h2>
+
+        <p>This is the part that takes the most energy and planning. Zero is not reactive to people. He's generally fine with dogs too, unless they get in his face without warning. Scotty, though, Scotty believes that absolutely no one else should exist on our street. People walking by, dogs across the road, kids on bikes, the retired neighbour down the street who is the sweetest person alive. Scotty does not care. Everyone is a threat.</p>
+
+        <p>And here's the fun part: Zero trusts Scotty's judgment. He can't see well enough to know what Scotty is barking at, but if Scotty says it's a problem, Zero believes him. So one dog loses his mind, and then the other one joins in, and suddenly I'm managing two barking dogs on the sidewalk while the sweet neighbour waves at us from a safe distance.</p>
+
+        <p>In the winter, it's actually easier. Fewer people out, no kids playing in the street, no open windows with noise coming out. I walk them together in the winter. I often end up picking Scotty up and tucking him in my jacket because he gets cold so fast. Ten pounds doesn't hold a lot of heat.</p>
+
+        <p>In the summer, though, I take them out one at a time. It's just easier. One barking dog I can manage. Two barking, pulling, out-of-control dogs at the same time? That's not a walk, that's a hostage situation.</p>
+
+        <h2>Finding the Right Walking Spot</h2>
+
+        <p>We have a spot that works really well for us. There's a large parking lot near our house with grass around it, and we go there for our midday outings to sniff around. The beauty of it is that if I see other dogs or people coming, I can duck between some cars and create distance quickly. That matters when you have a dog who decides that every person on the horizon is a personal threat to the household.</p>
+
+        <p>If you have reactive dogs, finding a spot like this is a game changer. Somewhere with good sight lines so you can see what's coming, and some kind of cover or escape route so you can create space when you need to. It doesn't have to be fancy. A parking lot and some cars works just fine.</p>
+
+        <h2>Different Dogs, Different Routines</h2>
+
+        <p>One thing I've learned is that having two dogs doesn't mean they're on the same schedule. Scotty needs to go outside the second we wake up or there will be an accident. Small dog, small bladder, zero patience. Zero is more relaxed about mornings.</p>
+
+        <p>Zero needs his food made appealing. Some salmon treats on top, me sitting next to him. He's not food-driven and never really has been. Scotty would eat his food, your food, the cat's food, and the furniture if given the chance.</p>
+
+        <p>After their morning energy burst and some play time, they both settle down for what I call the quiet stretch. I work on my laptop, and they find their spots. Scotty burrows under the duvet on the bed. It could be the middle of a heat wave and that dog is still under the covers. Zero finds the coolest spot in the house and stretches out there. They're like opposite thermostats.</p>
+
+        <p>At the end of the day, we all pile onto the bed. Scotty tucks in next to my head, Zero settles at my feet. And that's the part where having two dogs doesn't feel like a survival exercise anymore. It just feels like home.</p>
+
+        <h2>It's a Lot. But It's Worth It.</h2>
+
+        <p>I'm not going to pretend it's easy. Managing two dogs with very different sizes, temperaments, food needs, and levels of reactivity takes planning and patience. Some days are smooth. Some days Scotty steals Zero's biggest toy and then barks at a leaf and then Zero joins in and I wonder what my life has become.</p>
+
+        <p>But they're best friends. They play together, they nap together, they look out for each other. Scotty thinks he's protecting Zero from every threat in the neighbourhood. Zero thinks Scotty is a reliable source of information about the outside world. Neither of them is correct, but it works for them.</p>
+
+        <div class="cta-box">
+            <h3>Need help keeping track of two (or more) dogs?</h3>
+            <p>I built a Multi-Dog Household Tracker that helps you manage feeding schedules, medications, vet visits, and routines for each dog separately. Because when you have more than one, you need it all in one place.</p>
+            <a href="https://payhip.com/TheScatteredNest" class="btn btn-primary" target="_blank" rel="noopener">Check Out the Multi-Dog Tracker</a>
+        </div>
+
+        <p>If you're thinking about adding a second dog, or you're already in the thick of it and wondering if it gets easier: it does. Sort of. You learn the rhythm. You figure out what works. And then one of them steals the other one's toy and you start all over again. But honestly? I wouldn't trade it.</p>
+    </article>
+
+    <footer class="footer">
+        <p>&copy; 2026 The Scattered Nest. All rights reserved. | <a href="../privacy/">Privacy Policy</a> | <a href="../">Home</a></p>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 20); });
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => { navLinks.classList.toggle('open'); });
+        navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('open'); }); });
+    </script>
+</body>
+</html>

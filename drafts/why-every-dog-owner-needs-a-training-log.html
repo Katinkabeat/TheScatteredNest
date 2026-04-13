@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Every Dog Owner Needs a Training Log - The Scattered Nest</title>
+    <meta name="description" content="Training your dog is messy, slow, and full of setbacks. A training log helps you see the progress you can't feel in the moment.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple: #C99BE5;
+            --purple-dark: #A06CC8;
+            --purple-deeper: #7B4FA0;
+            --teal: #8CD6D8;
+            --teal-dark: #5BBFC2;
+            --bg-cream: #FAF8FC;
+            --bg-section: #F3EEF8;
+            --text-dark: #3D2C4E;
+            --text-mid: #6B5A7D;
+            --text-light: #9A8AAC;
+            --white: #FFFFFF;
+            --shadow-soft: 0 2px 20px rgba(160, 108, 200, 0.1);
+            --shadow-card: 0 4px 24px rgba(160, 108, 200, 0.12);
+            --radius: 16px;
+            --max-width: 760px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
+        a { color: var(--purple-dark); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--purple-deeper); }
+
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(250, 248, 252, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(201, 155, 229, 0.15);
+        }
+        .nav.scrolled { box-shadow: var(--shadow-soft); }
+        .nav-inner {
+            max-width: 1100px; margin: 0 auto; padding: 12px 24px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .nav-logo { height: 44px; width: auto; }
+        .nav-links { display: flex; gap: 28px; list-style: none; }
+        .nav-links a {
+            font-size: 0.92em; font-weight: 500; color: var(--text-mid);
+            letter-spacing: 0.02em; position: relative;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0;
+            width: 0; height: 2px; background: var(--teal); transition: width 0.3s;
+        }
+        .nav-links a:hover { color: var(--purple-dark); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--purple-dark); margin: 5px 0; transition: 0.3s; }
+
+        .article-header {
+            padding: 140px 24px 48px; text-align: center;
+            background: linear-gradient(180deg, var(--bg-cream) 0%, var(--bg-section) 100%);
+        }
+        .article-tag {
+            display: inline-block; background: var(--bg-section); color: var(--purple-dark);
+            font-size: 0.78em; font-weight: 600; padding: 6px 16px; border-radius: 20px;
+            margin-bottom: 16px; letter-spacing: 0.03em; text-transform: uppercase;
+        }
+        .article-header h1 {
+            font-size: 2.4em; color: var(--purple-dark); margin-bottom: 12px;
+            max-width: var(--max-width); margin-left: auto; margin-right: auto;
+        }
+        .article-meta { color: var(--text-light); font-size: 0.9em; }
+        .article-body {
+            max-width: var(--max-width); margin: 0 auto; padding: 48px 24px 80px;
+        }
+        .article-body p {
+            color: var(--text-mid); font-size: 1.02em; margin-bottom: 24px;
+            text-align: justify; hyphens: none;
+        }
+        .article-body .intro {
+            font-size: 1.1em; font-style: italic; color: var(--text-dark);
+            border-left: 3px solid var(--purple); padding-left: 20px;
+            margin-bottom: 32px; text-align: left;
+        }
+        .article-body h2 {
+            font-size: 1.5em; color: var(--purple-dark);
+            margin-top: 40px; margin-bottom: 16px;
+        }
+        .article-body h3 {
+            font-size: 1.2em; color: var(--purple-dark);
+            margin-top: 32px; margin-bottom: 12px;
+        }
+        .cta-box {
+            background: var(--bg-section); border-radius: var(--radius);
+            padding: 32px; text-align: center; margin: 48px 0;
+        }
+        .cta-box h3 {
+            font-size: 1.3em; color: var(--purple-dark);
+            margin-bottom: 12px; margin-top: 0;
+        }
+        .cta-box p { text-align: center !important; margin-bottom: 20px !important; }
+        .btn {
+            display: inline-block; padding: 14px 32px; border-radius: 50px;
+            font-size: 0.95em; font-weight: 600; letter-spacing: 0.02em;
+            transition: all 0.3s; cursor: pointer; border: none;
+        }
+        .btn-primary { background: var(--purple); color: var(--white); }
+        .btn-primary:hover {
+            background: var(--purple-dark); color: var(--white);
+            transform: translateY(-2px); box-shadow: 0 6px 20px rgba(160, 108, 200, 0.3);
+        }
+        .back-link {
+            display: inline-block; margin-bottom: 32px;
+            font-size: 0.9em; font-weight: 500; color: var(--teal-dark);
+        }
+        .back-link:hover { color: var(--purple-dark); }
+        .footer {
+            background: var(--text-dark); color: rgba(255,255,255,0.7);
+            padding: 32px 24px; text-align: center; font-size: 0.85em;
+        }
+        .footer a { color: var(--teal); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-links.open {
+                display: flex; flex-direction: column;
+                position: absolute; top: 68px; left: 0; right: 0;
+                background: rgba(250, 248, 252, 0.98);
+                padding: 24px; gap: 16px;
+                border-bottom: 1px solid rgba(201, 155, 229, 0.15);
+                box-shadow: var(--shadow-soft);
+            }
+            .nav-toggle { display: block; }
+            .article-header { padding: 120px 20px 36px; }
+            .article-header h1 { font-size: 1.8em; }
+            .article-body { padding: 36px 20px 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav" id="navbar">
+        <div class="nav-inner">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../#about">About</a></li>
+                <li><a href="../#shop">Shop</a></li>
+                <li><a href="./">Blog</a></li>
+                <li><a href="../#connect">Connect</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="article-header">
+        <span class="article-tag">Dog Training</span>
+        <h1>Why Every Dog Owner Needs a Training Log (Not Just a Plan)</h1>
+        <p class="article-meta">May 11, 2026 &middot; By Rae</p>
+    </header>
+
+    <article class="article-body">
+        <a href="./" class="back-link">&larr; Back to all posts</a>
+
+        <p class="intro">I spent months trying to get Zero to stop barking in the car. Months. And for most of that time, I was convinced it wasn't working. Turns out I was wrong, but I almost gave up before I figured that out.</p>
+
+        <p>Zero is a border collie. He's also almost completely blind and can only hear out of one ear. But he could see just enough to notice cars going by when we were driving, and his herding brain decided that every single one of them needed to be told about it. Loudly.</p>
+
+        <p>So I did what the trainers and the videos said to do. I started conditioning him. Slowly.</p>
+
+        <p>First, I fed him his dinner in the back seat with the car off. Just me sitting beside him, him lying down, eating his kibble. We did that for a week. Then I moved to the front seat. Car still off. He stayed in the back. We did that for two weeks. Then I started rattling the keys. Rattle, kibble. Rattle, kibble. Then keys in the ignition, feed. Keys out, feed.</p>
+
+        <p>Baby steps. The whole way.</p>
+
+        <p>And you know what? No matter what I did, once the car was actually moving, he barked. In the kennel, barking. In a harness restraint, barking. It didn't matter. I eventually gave up. He didn't ride in the car for about a year after that.</p>
+
+        <p>Then I got a new car. An SUV. Zero had a vet appointment, so I put the seats down, set up his kennel, and braced myself for the noise. And he barely barked. A few little ones at the start, and then he was quiet. I could not believe it.</p>
+
+        <p>All that conditioning I did? It worked. I just couldn't see it because I didn't have anything to look back on. I had no record of where we started versus where we ended up. The progress was real, but it was so slow and spread out that it felt like nothing was happening.</p>
+
+        <p>That's why I'm such a fan of writing training down now.</p>
+
+        <h2>Training Feels Like Nothing Is Happening</h2>
+
+        <p>This is the hardest part of dog training, honestly. You do the same thing day after day, and it feels like your dog is never going to get it. You start questioning whether you're doing it wrong, whether your dog is different, whether you should just accept that this is how things are going to be.</p>
+
+        <p>But the truth is, most training progress is invisible in the moment. It happens in tiny shifts that you don't notice when you're living it every day. Your dog barked 30 times on a walk last month. This month it was 18. You didn't notice because 18 still feels like a lot. But that's real progress.</p>
+
+        <p>A training log catches those things. Not because you need to be scientific about it, but because your brain is not a reliable narrator when you're frustrated.</p>
+
+        <h2>What a Training Log Actually Looks Like</h2>
+
+        <p>It doesn't have to be complicated. I'm not talking about spreadsheets or graphs (unless that's your thing, no judgement). I'm talking about quick notes after a session or a walk. A few lines. That's it.</p>
+
+        <p>Things worth writing down:</p>
+
+        <p><strong>What you worked on.</strong> Loose leash walking? Recall? Staying calm when the doorbell rings? Just name it.</p>
+
+        <p><strong>How it went.</strong> And be honest. "Terrible, he pulled the whole time" is useful information. So is "actually pretty good today, only reacted to one dog."</p>
+
+        <p><strong>What you noticed.</strong> Did something specific trigger a reaction? Was your dog more focused than usual? More distracted? Was there a pattern you hadn't noticed before?</p>
+
+        <p><strong>What you want to try next time.</strong> This one is for future you. Because you will forget what you were planning to do differently, and then you'll wing it, and then you'll end up doing the same thing that didn't work last time.</p>
+
+        <h2>It Helps Your Trainer Too</h2>
+
+        <p>I worked with a one-on-one behaviourist trainer when Zero was younger. She was wonderful, and one of the things she appreciated most was when I could tell her specifically what had been happening between sessions.</p>
+
+        <p>There was one day she had Zero walking through Home Depot, calm as anything, lying down when she stopped, not trying to greet every person who walked by. I was shocked. He never did that for me. But having notes about what we'd been working on at home helped her figure out what was connecting for him and what wasn't.</p>
+
+        <p>If you're paying for a trainer (and it's not cheap), you want to make the most of those sessions. Showing up with notes beats showing up with "I dunno, it was a rough week" every time.</p>
+
+        <h2>It Helps You See Patterns</h2>
+
+        <p>Sometimes the breakthrough isn't about what you're doing. It's about when, or where, or what happened right before.</p>
+
+        <p>Maybe your dog does great on morning walks but falls apart on evening ones. Maybe they're fine with training after a nap but terrible when they haven't had enough rest. Maybe the barking is worse on windy days (crows, in Zero's case. He hates crows. We have not solved this one).</p>
+
+        <p>You can't see patterns if you're not writing anything down. And once you do see them, you can actually adjust what you're doing instead of just repeating the same approach and hoping for different results.</p>
+
+        <h2>It Helps on the Bad Days</h2>
+
+        <p>This is maybe the most important reason. Training a dog is emotional. Especially when your dog has challenges that make everything a little harder. There are days when you feel like you've made no progress at all, like you're failing your dog, like nothing you do is making a difference.</p>
+
+        <p>On those days, being able to flip back through your notes and see that yes, things have gotten better, even if today was rough, that matters. It's proof that the work you're putting in is going somewhere, even when it doesn't feel like it.</p>
+
+        <p>If I'd had a log during all those months of car conditioning with Zero, I would have seen the small changes along the way. Instead, I thought it was a total failure until the day it suddenly wasn't.</p>
+
+        <div class="cta-box">
+            <h3>Want a simple training log?</h3>
+            <p>I built a printable Dog Training Session Log that covers what you worked on, how it went, triggers, and next steps. It's the kind of simple system I wish I'd started with from day one.</p>
+            <a href="https://payhip.com/TheScatteredNest" class="btn btn-primary" target="_blank" rel="noopener">Check Out the Training Log</a>
+        </div>
+
+        <p>You don't need to track every single thing. Just start writing something down after your sessions. Even a few words is better than relying on your memory, because your memory will lie to you on the hard days. The notes won't.</p>
+    </article>
+
+    <footer class="footer">
+        <p>&copy; 2026 The Scattered Nest. All rights reserved. | <a href="../privacy/">Privacy Policy</a> | <a href="../">Home</a></p>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 20); });
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => { navLinks.classList.toggle('open'); });
+        navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('open'); }); });
+    </script>
+</body>
+</html>
