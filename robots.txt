@@ -1,5 +1,2 @@
 User-agent: *
-Allow: /
-
-Sitemap: https://thescatterednest.ca/sitemap.xml
-<!-- deploy test Sun Apr 12 23:04:29 ADT 2026 -->
+Disallow: /
